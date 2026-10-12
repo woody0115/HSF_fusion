@@ -38,6 +38,10 @@ def main():
     ap.add_argument('--clip-len', type=int, default=4, help='TFS/HSF: consecutive frames per clip')
     ap.add_argument('--modality-drop', type=float, default=0.15,
                     help='iaf_* fusions: share of training images with the event contribution switched off')
+    ap.add_argument('--split', default='val', choices=['val', 'legacy'],
+                    help='val: train on train_core, select checkpoints on the validation sequences '
+                         '(configs/splits.yaml), report test once; legacy: train on all 47, select on test (#1-#12)')
+    ap.add_argument('--resume', action='store_true', help='continue from <run>/resume.pt')
     ap.add_argument('--smoke', action='store_true', help='2 short epochs on a few sequences')
     a = ap.parse_args()
 
@@ -55,6 +59,9 @@ def main():
     print(f'config: {vars(a)}', flush=True)
     smoke = dict(epochs=2, sequences_train=['zurich_city_16_a', 'zurich_city_17_a'], sequences_val=['thun_02_a'],
                  max_train_batches=150) if a.smoke else dict(epochs=a.epochs)
+    splits = dict(train_split='train', val_split='test') if (a.split == 'legacy' or a.smoke) else \
+        dict(train_split='train_core', val_split='val')
+    smoke.update(splits, resume=a.resume)
     if model.stateful:      # TFS / full HSF: clips of consecutive frames, streaming evaluation
         train_temporal(model, run_dir, clips=a.clips, clip_len=a.clip_len, lr=a.lr, workers=a.workers,
                        eval_every=1 if (a.smoke or a.epochs <= 6) else 2, warmup_epochs=a.warmup, **smoke)

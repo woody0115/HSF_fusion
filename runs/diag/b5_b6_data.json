@@ -1,0 +1,214 @@
+{
+ "train": {
+  "labelled_frames": 56486,
+  "sequences": 47,
+  "per_class": {
+   "pedestrian": {
+    "boxes": 42461,
+    "frames_with_class": 18939,
+    "area_bins_%": {
+     "small(<32^2)": 82.2,
+     "medium(32^2-96^2)": 17.1,
+     "large(>96^2)": 0.7,
+     "median_area_px": 300.0
+    }
+   },
+   "rider": {
+    "boxes": 2727,
+    "frames_with_class": 2601,
+    "area_bins_%": {
+     "small(<32^2)": 55.8,
+     "medium(32^2-96^2)": 39.2,
+     "large(>96^2)": 5.0,
+     "median_area_px": 800.0
+    }
+   },
+   "car": {
+    "boxes": 228199,
+    "frames_with_class": 54335
+   },
+   "bus": {
+    "boxes": 6040,
+    "frames_with_class": 5867
+   },
+   "truck": {
+    "boxes": 9290,
+    "frames_with_class": 8223
+   },
+   "bicycle": {
+    "boxes": 4810,
+    "frames_with_class": 4062
+   },
+   "motorcycle": {
+    "boxes": 3203,
+    "frames_with_class": 2891
+   },
+   "train": {
+    "boxes": 0,
+    "frames_with_class": 0
+   }
+  }
+ },
+ "test": {
+  "labelled_frames": 13893,
+  "sequences": 13,
+  "per_class": {
+   "pedestrian": {
+    "boxes": 31039,
+    "frames_with_class": 5995,
+    "area_bins_%": {
+     "small(<32^2)": 77.8,
+     "medium(32^2-96^2)": 21.5,
+     "large(>96^2)": 0.7,
+     "median_area_px": 364.0
+    }
+   },
+   "rider": {
+    "boxes": 3411,
+    "frames_with_class": 2417,
+    "area_bins_%": {
+     "small(<32^2)": 35.6,
+     "medium(32^2-96^2)": 50.5,
+     "large(>96^2)": 13.9,
+     "median_area_px": 2040.0
+    }
+   },
+   "car": {
+    "boxes": 46538,
+    "frames_with_class": 13684
+   },
+   "bus": {
+    "boxes": 1380,
+    "frames_with_class": 1369
+   },
+   "truck": {
+    "boxes": 1784,
+    "frames_with_class": 1524
+   },
+   "bicycle": {
+    "boxes": 3678,
+    "frames_with_class": 2453
+   },
+   "motorcycle": {
+    "boxes": 482,
+    "frames_with_class": 448
+   },
+   "train": {
+    "boxes": 0,
+    "frames_with_class": 0
+   }
+  }
+ },
+ "owod_AP50_per_class": {
+  "#11 T1": {
+   "car": 88.04
+  },
+  "#11 T2": {
+   "car": 88.03,
+   "bus": 13.55,
+   "truck": 24.57
+  },
+  "#11 T3": {
+   "car": 87.8,
+   "bus": 13.45,
+   "truck": 24.52,
+   "pedestrian": 0.34,
+   "rider": 0.14
+  },
+  "#11 T4": {
+   "car": 87.78,
+   "bus": 13.41,
+   "truck": 24.5,
+   "pedestrian": 0.34,
+   "rider": 0.14,
+   "bicycle": 0.23,
+   "motorcycle": 6.41
+  },
+  "#12 T1": {
+   "car": 86.38
+  },
+  "#12 T2": {
+   "car": 86.36,
+   "bus": 11.06,
+   "truck": 21.02
+  },
+  "#12 T3": {
+   "car": 86.26,
+   "bus": 10.85,
+   "truck": 20.6,
+   "pedestrian": 0.29,
+   "rider": 0.29
+  },
+  "#12 T4": {
+   "car": 86.26,
+   "bus": 10.85,
+   "truck": 20.6,
+   "pedestrian": 0.29,
+   "rider": 0.27,
+   "bicycle": 0.75,
+   "motorcycle": 1.31
+  }
+ },
+ "T1_base": [
+  {
+   "epoch": "1",
+   "mAP50": "0.84296",
+   "mAP50-95": "0.60591",
+   "lr": "0.00901"
+  },
+  {
+   "epoch": "2",
+   "mAP50": "0.85745",
+   "mAP50-95": "0.6378",
+   "lr": "0.008020000000000001"
+  },
+  {
+   "epoch": "3",
+   "mAP50": "0.85005",
+   "mAP50-95": "0.63982",
+   "lr": "0.00703"
+  },
+  {
+   "epoch": "4",
+   "mAP50": "0.86582",
+   "mAP50-95": "0.66011",
+   "lr": "0.00604"
+  },
+  {
+   "epoch": "5",
+   "mAP50": "0.86848",
+   "mAP50-95": "0.66904",
+   "lr": "0.00505"
+  },
+  {
+   "epoch": "6",
+   "mAP50": "0.87664",
+   "mAP50-95": "0.6797",
+   "lr": "0.00406"
+  },
+  {
+   "epoch": "7",
+   "mAP50": "0.8789",
+   "mAP50-95": "0.68548",
+   "lr": "0.0030700000000000007"
+  },
+  {
+   "epoch": "8",
+   "mAP50": "0.88275",
+   "mAP50-95": "0.69176",
+   "lr": "0.00208"
+  },
+  {
+   "epoch": "9",
+   "mAP50": "0.88629",
+   "mAP50-95": "0.69633",
+   "lr": "0.0010899999999999998"
+  },
+  {
+   "epoch": "10",
+   "mAP50": "0.88501",
+   "mAP50-95": "0.69629",
+   "lr": "0.0001"
+  }
+ ]
+}

@@ -1,0 +1,2 @@
+{"samples": {"pedestrian": 3000, "rider": 3000, "car": 3000, "bus": 1380, "truck": 1784, "bicycle": 3000, "motorcycle": 481, "background": 3001}, "pca_cumulative_7classes": {"1": 0.4187, "5": 0.7628, "20": 0.92}, "pca_cumulative_with_background": {"1": 0.3397, "5": 0.6987, "20": 0.9032}}
+-> runs/diag/b4_embedding.json

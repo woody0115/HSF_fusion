@@ -1,0 +1,11 @@
+# Validation split carved out of the 47 DSEC-Det training sequences (since 2026-10-13).
+# New runs select checkpoints on "val" and train on "train_core" (= train minus val); the 13 test
+# sequences are only used for the final report. Versions #1-#12 were trained on all 47 sequences and
+# selected on test ("--split legacy" reproduces that).
+# Chosen for coverage: 5,413 frames (9.6 %), one night sequence, every class with >= 600 boxes.
+val_sequences:
+  - interlaken_00_g
+  - zurich_city_01_d
+  - zurich_city_04_d
+  - zurich_city_05_b
+  - zurich_city_09_e

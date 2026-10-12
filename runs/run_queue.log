@@ -47,3 +47,14 @@
 2026-10-06 11:24:19  start step9_opt3_rescore : tools\owod_event_rescore.py --run runs\step7\owod_add_evtign
 2026-10-06 11:37:17  end   step9_opt3_rescore (exit 0)
 2026-10-06 11:37:17  queue finished
+2026-10-13 01:31:12  start diag_gate : tools\diag_ck.py gate
+2026-10-13 01:37:04  end   diag_gate (exit 0)
+2026-10-13 01:37:04  start diag_b3 : tools\diag_ck.py b3
+2026-10-13 01:40:47  end   diag_b3 (exit 0)
+2026-10-13 01:40:47  start diag_b4 : tools\diag_ck.py b4
+2026-10-13 01:42:14  end   diag_b4 (exit 0)
+2026-10-13 01:42:14  start diag_b1 : tools\diag_ck.py b1
+2026-10-13 02:24:12  end   diag_b1 (exit 0)
+2026-10-13 02:24:12  start diag_b2 : tools\diag_ck.py b2
+2026-10-13 04:19:18  end   diag_b2 (exit 0)
+2026-10-13 04:19:18  queue finished

@@ -6,6 +6,10 @@
 
 | 日期時間 | 步驟 | 類型 | 內容 | 結果／影響 |
 |---|---|---|---|---|
+| 2026-10-13 | 10 | 改良 | 驗證集切分：`configs/splits.yaml` 從 47 個訓練序列切出 5 個（5,413 張，含 1 個夜間序列）；`train_dual.py`／`train_owod.py` 預設 `--split val`（在驗證集挑權重，結束後在測試集評估一次，寫 `test_metrics.json`），`--split legacy` 重現 #1–#12 | 之後的實驗不再用測試集挑模型 |
+| 2026-10-13 | 10 | 改良 | 續訓：每個 epoch 存 `resume.pt`（原始權重、EMA、optimizer、scaler、進度），`--resume` 接續；OWOD 已完成的 Task 直接沿用 | 小規模測試通過（`runs/_tests/`）；重開機不必從頭重跑 |
+| 2026-10-13 | 10 | 結果 | CK 崩潰診斷（`tools/diag_ck.py`、`tools/diag_data_stats.py`，結果在 `runs/diag/`）：B1 線性探測、B2 調嵌入加訓練量、B3 框召回、B4 嵌入空間、B5／B6 資料統計、D3 閘門逐張分布 | 主因是凍結的 Neck（只放開分類頭時 pedestrian 0.7，放開 Neck 後 51.1）；pedestrian 的框回歸也壞（oracle IoU≥0.5 只有 28.9%）；加訓練量無效；閘門每張影像的標準差 0.0002 |
+| 2026-10-13 | – | 整理 | 回覆另一個 agent 的疑問清單：`docs/answers_for_planning_agent.md`（含 13 項問題與改善方案）；`tools/make_text_embeds.py` 把一次性指令存成腳本（已驗證完全重現 npz）；README 進度表更新 | – |
 | 2026-10-12 | – | 里程碑 | 12 個有效版本的權重上傳到 GitHub Release `models-2026-10-12`（每版一個 zip，含權重、結果檔、載入說明；`tools/pack_release.py`） | 約 1.3 GB；打包檔在 `D:\HSF_release` |
 | 2026-10-12 | – | 里程碑 | 上傳到 GitHub 私人 repo [woody0115/HSF_fusion](https://github.com/woody0115/HSF_fusion)：程式、文件、設定與 87 個文字結果檔 | 權重（.pt）、.venv、圖片、資料集不上傳；本機檔案全部保留 |
 | 2026-10-06 21:00 | – | 整理 | 版本與架構解析文件、`VERSIONS.md`、本歷程；決定所有舊版本不刪 | 12 個有效版本、6 個封存資料夾全部保留 |

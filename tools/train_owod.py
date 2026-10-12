@@ -46,6 +46,11 @@ def main():
     ap.add_argument('--event-ignore', type=float, default=0.0,
                     help='T1 base + object wildcard: ignore background anchors in this top share of event density')
     ap.add_argument('--only-if', default=None, help='json with "effect": run only if it is true')
+    ap.add_argument('--split', default='val', choices=['val', 'legacy'],
+                    help='val: train/tune on train_core and select the T1 base checkpoint on the validation '
+                         'sequences; legacy: all 47 sequences, T1 base selected on test (#11, #12)')
+    ap.add_argument('--resume', action='store_true',
+                    help='continue an interrupted run: T1 base from its resume.pt, finished Tasks (T<k>.pt) are reused')
     ap.add_argument('--smoke', action='store_true')
     a = ap.parse_args()
     if a.only_if:
@@ -68,12 +73,23 @@ def main():
     device = torch.device('cuda')
     model.to(device)
 
+    tr_split = 'train' if (a.split == 'legacy' or a.smoke) else 'train_core'
+    val_split = 'test' if (a.split == 'legacy' or a.smoke) else 'val'
     prev, rows = [], []
     for tname, tcfg in tasks.items():
         cur = list(tcfg['classes'])
         unknown = [c for c in PRESENT if c not in prev + cur]
         print(f'\n===== {tname}: previously known {[NAMES[c] for c in prev]}, current {[NAMES[c] for c in cur]}, '
               f'unknown {[NAMES[c] for c in unknown]} =====', flush=True)
+        done = osp.join(run_dir, f'{tname}.pt')
+        if a.resume and osp.isfile(done) and osp.isfile(osp.join(run_dir, f'{tname}_metrics.json')):
+            model.load_state_dict(torch.load(done, map_location=device)['model'])
+            res = json.load(open(osp.join(run_dir, f'{tname}_metrics.json')))
+            res = {k: (float('nan') if v is None else v) for k, v in res.items()}
+            print(f'{tname}: finished earlier, reusing {done}', flush=True)
+            rows.append((tname, res))
+            prev = prev + cur
+            continue
         if tname == 'T1':
             # full training on the first task's classes only
             set_active(model, cur)
@@ -86,12 +102,14 @@ def main():
             train(model, base_dir, epochs=1 if a.smoke else a.base_epochs, batch=8, lr=0.01, workers=a.workers,
                   classes=cur, label_map={c: i for i, c in enumerate(cur)},
                   sequences_train=smoke.get('sequences'), sequences_val=sm_val.get('sequences'),
-                  max_train_batches=smoke.get('max_batches'), event_ignore=a.event_ignore)
+                  max_train_batches=smoke.get('max_batches'), event_ignore=a.event_ignore,
+                  train_split=tr_split, val_split=val_split, resume=a.resume)
             model.load_state_dict(torch.load(osp.join(base_dir, 'best.pt'), map_location=device)['model'])
             model.names = all_names
             tune_object(model, device, known=cur, epochs=a.tune_epochs, workers=a.workers,
-                        event_ignore=a.event_ignore, **smoke)
-        tune_embeddings(model, device, prev, cur, epochs=a.tune_epochs, workers=a.workers, **smoke)
+                        event_ignore=a.event_ignore, train_split=tr_split, **smoke)
+        tune_embeddings(model, device, prev, cur, epochs=a.tune_epochs, workers=a.workers, train_split=tr_split,
+                        **smoke)
         res = evaluate_owod(model, device, prev, cur, unknown, workers=a.workers, **sm_val)
         save_task(run_dir, tname, res, model)
         print(f'{tname}: U-Recall {fmt(res["U-Recall"])}  WI {fmt(res["WI"], 4)}  A-OSE {res["A-OSE"]}  '

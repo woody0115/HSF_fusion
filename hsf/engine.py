@@ -6,6 +6,7 @@ linear LR decay to lr*lrf with warmup, EMA weights, AMP, gradient clipping at 10
 Ultralytics' NMS (conf 0.001, IoU 0.7, multi-label, max 300) and its AP computation.
 """
 import csv
+import json
 import math
 import os
 import os.path as osp
@@ -24,6 +25,47 @@ from ultralytics.utils.torch_utils import ModelEMA
 from hsf.data.dataset import ClipDSEC, DualDSEC, SequenceDSEC
 
 IOUV = torch.linspace(0.5, 0.95, 10)
+RESUME = 'resume.pt'      # full training state, rewritten after every epoch (last.pt / best.pt keep their old format)
+
+
+def save_resume(run_dir, epoch, it, best, model, ema, opt, scaler):
+    torch.save({'epoch': epoch, 'it': it, 'best': best, 'model': model.state_dict(), 'ema': ema.ema.state_dict(),
+                'ema_updates': ema.updates, 'optimizer': opt.state_dict(), 'scaler': scaler.state_dict()},
+               osp.join(run_dir, RESUME))
+
+
+def load_resume(run_dir, model, ema, opt, scaler):
+    """Restore the state saved by save_resume -> (start_epoch, it, best); (0, 0, -1) if there is none."""
+    path = osp.join(run_dir, RESUME)
+    if not osp.isfile(path):
+        print(f'resume: {path} not found, starting from scratch', flush=True)
+        return 0, 0, -1.0
+    ck = torch.load(path, map_location='cpu', weights_only=False)
+    model.load_state_dict(ck['model'])
+    ema.ema.load_state_dict(ck['ema'])
+    ema.updates = ck['ema_updates']
+    opt.load_state_dict(ck['optimizer'])
+    scaler.load_state_dict(ck['scaler'])
+    print(f'resume: continuing after epoch {ck["epoch"]} (iteration {ck["it"]}, best {ck["best"]:.4f})', flush=True)
+    return ck['epoch'], ck['it'], ck['best']
+
+
+def init_csv(csv_path, resumed):
+    if resumed and osp.isfile(csv_path):
+        return
+    with open(csv_path, 'w', newline='') as f:
+        csv.writer(f).writerow(['epoch', 'box_loss', 'cls_loss', 'dfl_loss', 'precision', 'recall',
+                                'mAP50', 'mAP50-95', 'lr', 'minutes'])
+
+
+def final_test(model, run_dir, evaluate_fn, loader, device, names):
+    """When checkpoints were selected on the validation split: evaluate best.pt once on the test split."""
+    model.load_state_dict(torch.load(osp.join(run_dir, 'best.pt'), map_location='cpu', weights_only=False)['model'])
+    res = evaluate_fn(model, loader, device, names, desc='test (best on val)')
+    out = {k: ({kk: float(vv) for kk, vv in v.items()} if isinstance(v, dict) else float(v)) for k, v in res.items()}
+    json.dump(out, open(osp.join(run_dir, 'test_metrics.json'), 'w'), indent=1)
+    print(f'== test (checkpoint chosen on val): mAP50 {res["mAP50"]:.4f}  mAP50-95 {res["mAP50-95"]:.4f}', flush=True)
+    return res
 
 
 class Tee:
@@ -154,15 +196,16 @@ def _select(preds, b, sel):
 
 def train_temporal(model, run_dir, epochs=20, clips=4, clip_len=4, lr=0.005, lrf=0.01, momentum=0.937,
                    weight_decay=5e-4, warmup_epochs=3, nbs=64, workers=8, eval_every=2,
-                   sequences_train=None, sequences_val=None, max_train_batches=None):
+                   sequences_train=None, sequences_val=None, max_train_batches=None,
+                   train_split='train', val_split='test', resume=False):
     """Training for stateful fusion (TFS / full HSF) on clips of consecutive frames with full BPTT
     inside each clip (hidden state starts at zero per clip). Same optimizer / schedule / EMA / AMP
     recipe as train(); one iteration processes clips x clip_len frames."""
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = model.to(device)
     names = {i: n for i, n in enumerate(model.names.values() if isinstance(model.names, dict) else model.names)}
-    train_set = ClipDSEC('train', clip_len=clip_len, augment=True, sequences=sequences_train)
-    val_set = SequenceDSEC('test', sequences=sequences_val)
+    train_set = ClipDSEC(train_split, clip_len=clip_len, augment=True, sequences=sequences_train)
+    val_set = SequenceDSEC(val_split, sequences=sequences_val)
     val_loader = DataLoader(val_set, batch_size=1, shuffle=False, num_workers=workers, pin_memory=True,
                             persistent_workers=workers > 0)
     print(f'train clips {len(train_set)} x {clip_len} frames, val frames {len(val_set)} (streamed), '
@@ -176,14 +219,12 @@ def train_temporal(model, run_dir, epochs=20, clips=4, clip_len=4, lr=0.005, lrf
     ema = ModelEMA(model)
     scaler = torch.amp.GradScaler('cuda', enabled=device.type == 'cuda')
     crit = v8DetectionLoss(model)
-    best, it = -1.0, 0
+    start, it, best = load_resume(run_dir, model, ema, opt, scaler) if resume else (0, 0, -1.0)
     csv_path = osp.join(run_dir, 'results.csv')
-    with open(csv_path, 'w', newline='') as f:
-        csv.writer(f).writerow(['epoch', 'box_loss', 'cls_loss', 'dfl_loss', 'precision', 'recall',
-                                'mAP50', 'mAP50-95', 'lr', 'minutes'])
+    init_csv(csv_path, start > 0)
     n_warm = None
 
-    for epoch in range(epochs):
+    for epoch in range(start, epochs):
         train_set.resample()                       # new clip boundaries every epoch
         loader = DataLoader(train_set, batch_size=clips, shuffle=True, drop_last=True, num_workers=workers,
                             pin_memory=True, collate_fn=ClipDSEC.collate)
@@ -245,12 +286,18 @@ def train_temporal(model, run_dir, epochs=20, clips=4, clip_len=4, lr=0.005, lrf
                                     *[round(float(res[k]), 5) for k in ('precision', 'recall', 'mAP50', 'mAP50-95')],
                                     opt.param_groups[1]['lr'], round((time.time() - t0) / 60, 1)])
         ckpt = {'epoch': epoch + 1, 'model': ema.ema.state_dict(), 'fusion': model.fusion_type,
-                'nc': model.nc, 'names': model.names, 'metrics': res, 'clip_len': clip_len}
+                'nc': model.nc, 'names': model.names, 'metrics': res, 'clip_len': clip_len,
+                'val_split': val_split}
         torch.save(ckpt, osp.join(run_dir, 'last.pt'))
         if res['mAP50-95'] > best:
             best = res['mAP50-95']
             torch.save(ckpt, osp.join(run_dir, 'best.pt'))
-    print(f'done. best mAP50-95 {best:.4f}  -> {run_dir}', flush=True)
+        save_resume(run_dir, epoch + 1, it, best, model, ema, opt, scaler)
+    print(f'done. best mAP50-95 {best:.4f} on {val_split}  -> {run_dir}', flush=True)
+    if val_split != 'test':
+        test_loader = DataLoader(SequenceDSEC('test'), batch_size=1, shuffle=False, num_workers=workers,
+                                 pin_memory=True)
+        final_test(ema.ema, run_dir, evaluate_sequential, test_loader, device, names)
     return best
 
 
@@ -269,9 +316,10 @@ def match_predictions(pred_cls, true_cls, iou, iouv):
     return correct
 
 
-def make_loaders(batch, workers, size=640, sequences_train=None, sequences_val=None, classes=None, label_map=None):
-    tr = DualDSEC('train', size, augment=True, sequences=sequences_train, classes=classes, label_map=label_map)
-    va = DualDSEC('test', size, augment=False, sequences=sequences_val, classes=classes, label_map=label_map)
+def make_loaders(batch, workers, size=640, sequences_train=None, sequences_val=None, classes=None, label_map=None,
+                 train_split='train', val_split='test'):
+    tr = DualDSEC(train_split, size, augment=True, sequences=sequences_train, classes=classes, label_map=label_map)
+    va = DualDSEC(val_split, size, augment=False, sequences=sequences_val, classes=classes, label_map=label_map)
     kw = dict(num_workers=workers, pin_memory=True, collate_fn=DualDSEC.collate,
               persistent_workers=workers > 0)
     return (DataLoader(tr, batch_size=batch, shuffle=True, drop_last=True, **kw),
@@ -280,14 +328,19 @@ def make_loaders(batch, workers, size=640, sequences_train=None, sequences_val=N
 
 def train(model, run_dir, epochs=40, batch=8, lr=0.005, lrf=0.01, momentum=0.937, weight_decay=5e-4,
           warmup_epochs=3, nbs=64, workers=8, eval_every=1, sequences_train=None, sequences_val=None,
-          max_train_batches=None, classes=None, label_map=None, event_ignore=0.0):
+          max_train_batches=None, classes=None, label_map=None, event_ignore=0.0,
+          train_split='train', val_split='test', resume=False):
     """classes / label_map: train on a subset of classes (open-world task 1) with remapped ids.
-    event_ignore: > 0 -> EventIgnoreLoss (hsf/owod/event.py) with that share of event-active anchors."""
+    event_ignore: > 0 -> EventIgnoreLoss (hsf/owod/event.py) with that share of event-active anchors.
+    train_split / val_split: dataset splits (hsf/data/dataset.py split_filter); with val_split != 'test' the
+    best checkpoint is also evaluated once on the test split (test_metrics.json).
+    resume: continue from run_dir/resume.pt (written after every epoch)."""
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = model.to(device)
     names = {i: n for i, n in enumerate(model.names.values() if isinstance(model.names, dict) else model.names)}
     train_loader, val_loader = make_loaders(batch, workers, sequences_train=sequences_train,
-                                            sequences_val=sequences_val, classes=classes, label_map=label_map)
+                                            sequences_val=sequences_val, classes=classes, label_map=label_map,
+                                            train_split=train_split, val_split=val_split)
     print(f'train frames {len(train_loader.dataset)}, val frames {len(val_loader.dataset)}, '
           f'params {sum(p.numel() for p in model.parameters()) / 1e6:.1f} M', flush=True)
 
@@ -305,13 +358,11 @@ def train(model, run_dir, epochs=40, batch=8, lr=0.005, lrf=0.01, momentum=0.937
         crit = v8DetectionLoss(model)
     nb = len(train_loader) if max_train_batches is None else min(len(train_loader), max_train_batches)
     n_warm = max(round(warmup_epochs * nb), 100)
-    best, it = -1.0, 0
+    start, it, best = load_resume(run_dir, model, ema, opt, scaler) if resume else (0, 0, -1.0)
     csv_path = osp.join(run_dir, 'results.csv')
-    with open(csv_path, 'w', newline='') as f:
-        csv.writer(f).writerow(['epoch', 'box_loss', 'cls_loss', 'dfl_loss', 'precision', 'recall',
-                                'mAP50', 'mAP50-95', 'lr', 'minutes'])
+    init_csv(csv_path, start > 0)
 
-    for epoch in range(epochs):
+    for epoch in range(start, epochs):
         model.train()
         t0 = time.time()
         mloss = torch.zeros(3, device=device)
@@ -360,10 +411,15 @@ def train(model, run_dir, epochs=40, batch=8, lr=0.005, lrf=0.01, momentum=0.937
                                     *[round(float(res[k]), 5) for k in ('precision', 'recall', 'mAP50', 'mAP50-95')],
                                     opt.param_groups[1]['lr'], round((time.time() - t0) / 60, 1)])
         ckpt = {'epoch': epoch + 1, 'model': ema.ema.state_dict(), 'fusion': getattr(model, 'fusion_type', None),
-                'nc': model.nc, 'names': model.names, 'metrics': res}
+                'nc': model.nc, 'names': model.names, 'metrics': res, 'val_split': val_split}
         torch.save(ckpt, osp.join(run_dir, 'last.pt'))
         if res['mAP50-95'] > best:
             best = res['mAP50-95']
             torch.save(ckpt, osp.join(run_dir, 'best.pt'))
-    print(f'done. best mAP50-95 {best:.4f}  -> {run_dir}', flush=True)
+        save_resume(run_dir, epoch + 1, it, best, model, ema, opt, scaler)
+    print(f'done. best mAP50-95 {best:.4f} on {val_split}  -> {run_dir}', flush=True)
+    if val_split != 'test':
+        test_loader = DataLoader(DualDSEC('test', classes=classes, label_map=label_map), batch_size=batch * 2,
+                                 shuffle=False, num_workers=workers, pin_memory=True, collate_fn=DualDSEC.collate)
+        final_test(ema.ema, run_dir, evaluate, test_loader, device, names)
     return best

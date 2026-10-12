@@ -1,0 +1,13 @@
+  b3 #11 0/869 (16 s)
+  b3 #11 200/869 (34 s)
+  b3 #11 400/869 (59 s)
+  b3 #11 600/869 (82 s)
+  b3 #11 800/869 (103 s)
+#11 {"pedestrian": {"n_gt": 31005, "obj05": 3.3, "obj07": 1.0, "max05": 4.6, "max07": 1.4, "oracle05": 28.9, "oracle07": 6.0, "oracle_mean_iou": 0.447}, "rider": {"n_gt": 3410, "obj05": 4.4, "obj07": 0.9, "max05": 7.0, "max07": 1.6, "oracle05": 59.5, "oracle07": 9.6, "oracle_mean_iou": 0.54}, "car": {"n_gt": 46520, "obj05": 93.3, "obj07": 83.4, "max05": 94.2, "max07": 84.1, "oracle05": 97.1, "oracle07": 88.9, "oracle_mean_iou": 0.865}, "bus": {"n_gt": 1380, "obj05": 54.1, "obj07": 42.8, "max05": 60.7, "max07": 48.0, "oracle05": 85.4, "oracle07": 67.5, "oracle_mean_iou": 0.759}, "truck": {"n_gt": 1784, "obj05": 65.9, "obj07": 49.9, "max05": 71.3, "max07": 54.1, "oracle05": 99.3, "oracle07": 83.0, "oracle_mean_iou": 0.826}, "bicycle": {"n_gt": 3674, "obj05": 3.3, "obj07": 1.1, "max05": 7.7, "max07": 3.7, "oracle05": 87.1, "oracle07": 42.1, "oracle_mean_iou": 0.661}, "motorcycle": {"n_gt": 481, "obj05": 31.8, "obj07": 14.3, "max05": 37.0, "max07": 19.1, "oracle05": 88.6, "oracle07": 74.8, "oracle_mean_iou": 0.759}}
+  b3 #12 0/869 (14 s)
+  b3 #12 200/869 (32 s)
+  b3 #12 400/869 (56 s)
+  b3 #12 600/869 (79 s)
+  b3 #12 800/869 (100 s)
+#12 {"pedestrian": {"n_gt": 31005, "obj05": 8.0, "obj07": 2.0, "max05": 9.2, "max07": 2.3, "oracle05": 27.4, "oracle07": 5.1, "oracle_mean_iou": 0.444}, "rider": {"n_gt": 3410, "obj05": 19.6, "obj07": 3.3, "max05": 21.3, "max07": 3.6, "oracle05": 63.4, "oracle07": 12.0, "oracle_mean_iou": 0.553}, "car": {"n_gt": 46520, "obj05": 95.0, "obj07": 85.0, "max05": 95.5, "max07": 85.4, "oracle05": 97.2, "oracle07": 89.1, "oracle_mean_iou": 0.87}, "bus": {"n_gt": 1380, "obj05": 71.4, "obj07": 51.5, "max05": 74.3, "max07": 53.3, "oracle05": 86.7, "oracle07": 65.3, "oracle_mean_iou": 0.751}, "truck": {"n_gt": 1784, "obj05": 69.1, "obj07": 50.8, "max05": 74.8, "max07": 54.7, "oracle05": 95.3, "oracle07": 73.9, "oracle_mean_iou": 0.796}, "bicycle": {"n_gt": 3674, "obj05": 24.4, "obj07": 8.5, "max05": 26.2, "max07": 9.2, "oracle05": 90.5, "oracle07": 49.5, "oracle_mean_iou": 0.684}, "motorcycle": {"n_gt": 481, "obj05": 61.1, "obj07": 41.0, "max05": 63.4, "max07": 42.6, "oracle05": 87.1, "oracle07": 71.9, "oracle_mean_iou": 0.745}}
+-> runs/diag/b3_box_recall.json

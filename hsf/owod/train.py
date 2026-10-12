@@ -59,13 +59,14 @@ def freeze_all_but_table(model):
 
 def loader(split, batch, workers, classes=None, label_map=None, augment=False, sequences=None):
     ds = DualDSEC(split, augment=augment, classes=classes, label_map=label_map, sequences=sequences)
-    return DataLoader(ds, batch_size=batch, shuffle=split == 'train', drop_last=split == 'train',
+    is_train = split in ('train', 'train_core')
+    return DataLoader(ds, batch_size=batch, shuffle=is_train, drop_last=is_train,
                       num_workers=workers, pin_memory=True, collate_fn=DualDSEC.collate,
                       persistent_workers=workers > 0)
 
 
 def tune_object(model, device, known, epochs=1, batch=16, workers=8, lr=1e-3, sequences=None, max_batches=None,
-                event_ignore=0.0):
+                event_ignore=0.0, train_split='train'):
     """Object wildcard: every box of a known class is the single class 'object'.
     event_ignore > 0: event-active background anchors are not negatives (EventIgnoreLoss)."""
     freeze_all_but_table(model)
@@ -74,14 +75,15 @@ def tune_object(model, device, known, epochs=1, batch=16, workers=8, lr=1e-3, se
     head = _HeadView(model.model[-1], 1, device)
     crit = EventIgnoreLoss(head, q=event_ignore) if event_ignore > 0 else v8DetectionLoss(head)
     opt = torch.optim.AdamW([model.class_table.emb], lr=lr, weight_decay=0.0)
-    dl = loader('train', batch, workers, classes=known, label_map={c: 0 for c in known}, augment=True,
+    dl = loader(train_split, batch, workers, classes=known, label_map={c: 0 for c in known}, augment=True,
                 sequences=sequences)
     _loop(model, dl, device, opt, epochs, max_batches, 'object wildcard',
           lambda maps, b, y: crit(maps, b)[0].sum())
 
 
 def tune_embeddings(model, device, prev, cur, epochs=1, batch=16, workers=8, lr=1e-3, sigma_iou=0.5,
-                    known_conf=0.2, sequences=None, max_batches=None):
+                    known_conf=0.2, sequences=None, max_batches=None, on_epoch=None, history=None,
+                    train_split='train'):
     """Learn current-class embeddings (cls loss) + 'unknown' (soft targets from the object wildcard)."""
     freeze_all_but_table(model)
     rows = prev + cur + [OBJ, UNK]                    # output channels during tuning
@@ -93,7 +95,7 @@ def tune_embeddings(model, device, prev, cur, epochs=1, batch=16, workers=8, lr=
     ch_obj, ch_unk = rows.index(OBJ), rows.index(UNK)
     crit = v8DetectionLoss(_HeadView(det, len(cur), device))
     opt = torch.optim.AdamW([model.class_table.emb], lr=lr, weight_decay=0.0)
-    dl = loader('train', batch, workers, classes=cur, label_map={c: i for i, c in enumerate(cur)}, augment=True,
+    dl = loader(train_split, batch, workers, classes=cur, label_map={c: i for i, c in enumerate(cur)}, augment=True,
                 sequences=sequences)
     box = 4 * det.reg_max
 
@@ -117,10 +119,11 @@ def tune_embeddings(model, device, prev, cur, epochs=1, batch=16, workers=8, lr=
         l_u = F.binary_cross_entropy_with_logits(logit_unk.float(), target.float(), reduction='sum')
         return l_k + l_u / max(float(target.sum()), 1.0) * B
 
-    _loop(model, dl, device, opt, epochs, max_batches, f'embeddings cur={cur}', loss_fn)
+    _loop(model, dl, device, opt, epochs, max_batches, f'embeddings cur={cur}', loss_fn, on_epoch, history)
 
 
-def _loop(model, dl, device, opt, epochs, max_batches, desc, loss_fn):
+def _loop(model, dl, device, opt, epochs, max_batches, desc, loss_fn, on_epoch=None, history=None):
+    """on_epoch(epoch) is called after every epoch (diagnostics); history collects (epoch, batch, running loss)."""
     nb = len(dl) if max_batches is None else min(len(dl), max_batches)
     for ep in range(epochs):
         t0, run = time.time(), 0.0
@@ -137,6 +140,10 @@ def _loop(model, dl, device, opt, epochs, max_batches, desc, loss_fn):
             if bi % 200 == 0:
                 print(f'  {desc}: epoch {ep + 1}/{epochs} {bi}/{nb} loss {run:.4f} ({(time.time() - t0) / 60:.1f} min)',
                       flush=True)
+                if history is not None:
+                    history.append((ep + 1, bi, round(run, 4)))
+        if on_epoch is not None:
+            on_epoch(ep + 1)
 
 
 @torch.no_grad()

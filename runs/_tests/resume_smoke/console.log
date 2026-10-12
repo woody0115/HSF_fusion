@@ -1,0 +1,59 @@
+=== part 1: 1 epoch (simulated interruption)
+train frames 452, val frames 817, params 16.2 M
+epoch 1/1  0/20  box 0.587 cls 0.440 dfl 0.859  lr 0.00000  0.1 min  mem 3.1 GB
+  val e1 1/52  (5 s)
+  val e1 51/52  (20 s)
+== epoch 1: mAP50 0.6223  mAP50-95 0.4089  P 0.685 R 0.583
+   per-class AP50-95: pedestrian 0.630, rider 0.663, car 0.649, bus 0.020, truck 0.004, bicycle 0.614, motorcycle 0.283
+done. best mAP50-95 0.4089 on val  -> E:\claude_Workspace\HSF_fusion\runs\_test_resume_tmp
+  test (best on val) 1/869  (7 s)
+  test (best on val) 51/869  (23 s)
+  test (best on val) 101/869  (39 s)
+  test (best on val) 151/869  (55 s)
+  test (best on val) 201/869  (70 s)
+  test (best on val) 251/869  (85 s)
+  test (best on val) 301/869  (103 s)
+  test (best on val) 351/869  (120 s)
+  test (best on val) 401/869  (137 s)
+  test (best on val) 451/869  (153 s)
+  test (best on val) 501/869  (169 s)
+  test (best on val) 551/869  (186 s)
+  test (best on val) 601/869  (202 s)
+  test (best on val) 651/869  (219 s)
+  test (best on val) 701/869  (237 s)
+  test (best on val) 751/869  (255 s)
+  test (best on val) 801/869  (271 s)
+  test (best on val) 851/869  (288 s)
+== test (checkpoint chosen on val): mAP50 0.7228  mAP50-95 0.4724
+=== part 2: resume to 2 epochs
+train frames 452, val frames 817, params 16.2 M
+resume: continuing after epoch 1 (iteration 20, best 0.4089)
+epoch 2/2  0/20  box 0.809 cls 0.449 dfl 0.878  lr 0.00010  0.1 min  mem 3.8 GB
+  val e2 1/52  (4 s)
+  val e2 51/52  (19 s)
+== epoch 2: mAP50 0.6269  mAP50-95 0.4140  P 0.694 R 0.597
+   per-class AP50-95: pedestrian 0.633, rider 0.666, car 0.659, bus 0.024, truck 0.003, bicycle 0.619, motorcycle 0.294
+done. best mAP50-95 0.4140 on val  -> E:\claude_Workspace\HSF_fusion\runs\_test_resume_tmp
+  test (best on val) 1/869  (4 s)
+  test (best on val) 51/869  (16 s)
+  test (best on val) 101/869  (26 s)
+  test (best on val) 151/869  (34 s)
+  test (best on val) 201/869  (42 s)
+  test (best on val) 251/869  (50 s)
+  test (best on val) 301/869  (58 s)
+  test (best on val) 351/869  (65 s)
+  test (best on val) 401/869  (72 s)
+  test (best on val) 451/869  (80 s)
+  test (best on val) 501/869  (89 s)
+  test (best on val) 551/869  (97 s)
+  test (best on val) 601/869  (104 s)
+  test (best on val) 651/869  (112 s)
+  test (best on val) 701/869  (120 s)
+  test (best on val) 751/869  (127 s)
+  test (best on val) 801/869  (135 s)
+  test (best on val) 851/869  (142 s)
+== test (checkpoint chosen on val): mAP50 0.7260  mAP50-95 0.4781
+epoch,box_loss,cls_loss,dfl_loss,precision,recall,mAP50,mAP50-95,lr,minutes
+1,0.7679,0.3973,0.8868,0.68491,0.58348,0.62227,0.40888,1e-05,0.5
+2,0.7621,0.398,0.8651,0.69363,0.59712,0.62695,0.41398,1e-05,0.4
+

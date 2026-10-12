@@ -25,16 +25,31 @@ from hsf.data.gear import GEAR
 
 ROOT = osp.abspath(osp.join(osp.dirname(__file__), '..', '..'))
 CFG = yaml.safe_load(open(osp.join(ROOT, 'configs', 'paths.yaml')))
+SPLITS = yaml.safe_load(open(osp.join(ROOT, 'configs', 'splits.yaml')))
+VAL_SEQUENCES = set(SPLITS['val_sequences'])
 RGB_FILL = (114, 114, 114)
 EVT_FILL = (114, 114, 114)        # same letterbox fill Ultralytics used when training the event model
 
 
+def split_filter(split):
+    """split name -> (folder under processed_root, keep set or None, drop set or None).
+    'train' = all 47 training sequences (versions #1-#12), 'train_core' = train minus the validation
+    sequences of configs/splits.yaml, 'val' = those sequences, 'test' = the 13 test sequences."""
+    if split == 'val':
+        return 'train', VAL_SEQUENCES, None
+    if split == 'train_core':
+        return 'train', None, VAL_SEQUENCES
+    return split, None, None
+
+
 def list_frames(split, sequences=None, require_gear=True):
-    """[(seq_dir, rgb_dir, frame_idx), ...] of labelled frames in a split."""
+    """[(seq_dir, rgb_dir, frame_idx), ...] of labelled frames in a split (see split_filter)."""
+    folder, keep, drop = split_filter(split)
     items = []
-    for mpath in sorted(glob.glob(osp.join(CFG['processed_root'], split, '*', 'meta.json'))):
+    for mpath in sorted(glob.glob(osp.join(CFG['processed_root'], folder, '*', 'meta.json'))):
         seq_dir = osp.dirname(mpath)
-        if sequences and osp.basename(seq_dir) not in sequences:
+        name = osp.basename(seq_dir)
+        if (sequences and name not in sequences) or (keep is not None and name not in keep) or                 (drop is not None and name in drop):
             continue
         if require_gear and not osp.isfile(osp.join(seq_dir, 'gear_done.json')):
             continue

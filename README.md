@@ -13,14 +13,15 @@
 |---|---|---|
 | 0 | 下載 DSEC-Det 到 `D:\DSEC`（`tools/download_dsec_det.ps1`，4 連線續傳；時間戳記另由 `tools/fetch_timestamps.py` 抽出） | ✅ |
 | 1 | 環境與專案架構（`tools/check_env.py`） | ✅ |
-| 2 | 資料前處理：GEAR event 影像、YOLO 標註（`tools/preprocess_dsec.py`；訓練資料在 E 槽 SSD） | 標註 ✅，GEAR 處理中 |
-| 3 | 單流基準：只用 RGB / 只用 event（論文 65.6/44.4 、 41.9/24.8） | RGB ✅ **75.5 / 54.0**；event 自動接續 |
-| 4 | 雙流基準：特徵相加，20 epochs（論文 64.6/43.3） | 程式 ✅（評估方式已對照 Ultralytics），event 基準完成後自動開始 |
-| 5 | + AF 融合模組（論文 65.7/44.5） | 程式 ✅（`hsf/models/fusion.py`），步驟 4 完成後自動開始 |
-| 6 | + TFS 時間模組 → 完整 HSF（論文 67.2/45.6）；同時作為 OWOD 的 oracle 對照 | 程式 ✅（連續片段訓練 + 串流評估），步驟 5 完成後自動開始 |
-| 8 | 光線自適應融合（我們的延伸）：`iaf_add` / `iaf_af`，加上 hard switch 參考值（`route_*`） | 程式 ✅，訓練中 |
-| 9 | event 參與 unknown 判斷：做法 1 推論時依框內 event 密度重新評分（`tools/owod_event_rescore.py`）；有效果才做做法 3（T1 訓練時 event 活躍的背景不當負樣本，`train_owod.py --event-ignore 0.1`） | 排程中（`tools/start_step9.ps1`，接在步驟 8 之後） |
-| 7 | 開放世界 DSEC-OWOD：Task 1–4（`configs/owod_tasks.yaml`），UniOW 式分類頭（CLIP 文字嵌入 + 萬用嵌入），指標 U-Recall / WI / A-OSE / PK·CK·Both mAP | 程式 ✅（指標已單元測試、流程測試通過），步驟 6 完成後自動開始 |
+| 2 | 資料前處理：GEAR event 影像、YOLO 標註（`tools/preprocess_dsec.py`；訓練資料在 E 槽 SSD） | ✅ |
+| 3 | 單流基準：只用 RGB / 只用 event（論文 65.6/44.4 、 41.9/24.8） | ✅ RGB 75.6 / 53.9、event 51.4 / 32.9（自家評估器；RGB 訓練結束時 Ultralytics 驗證為 75.5 / 54.0） |
+| 4 | 雙流基準：特徵相加（論文 64.6/43.3） | ✅ #3 e20 51.9；#6 lr 1e-3 53.0 |
+| 5 | + AF 融合模組（論文 65.7/44.5） | ✅ #4 e20 52.9；#7 lr 1e-3 53.5 |
+| 6 | + TFS 時間模組 → 完整 HSF（論文 67.2/45.6） | ✅ #5 e20 51.5；#8 lr 1e-3 53.1 |
+| 7 | 開放世界 DSEC-OWOD：Task 1–4（`configs/owod_tasks.yaml`），UniOW 式分類頭（CLIP 文字嵌入 + 萬用嵌入），指標 U-Recall / WI / A-OSE / PK·CK·Both mAP | ✅ #11（T3 U-Recall 6.7、CK 0.2） |
+| 8 | 光線自適應融合（我們的延伸）：`iaf_add` / `iaf_af`，加上 hard switch 參考值（`route_*`） | ✅ #9、#10 都是 53.5；閘門沒學會看光線 |
+| 9 | event 參與 unknown 判斷：做法 1 推論時依框內 event 密度重新評分（`tools/owod_event_rescore.py`）；做法 3 T1 訓練時 event 活躍的背景不當負樣本（`train_owod.py --event-ignore 0.1`） | ✅ #12（T3 U-Recall 26.0） |
+| 10 | CK 崩潰診斷（線性探測、調嵌入訓練量、框召回、嵌入空間；`tools/diag_ck.py`、`tools/diag_data_stats.py`） | 進行中，結果在 `runs/diag/` |
 
 ## 已確認的設計決定
 - **GEAR**：事件時窗 = 前一張影像 → 這一張影像（sync=front）；c=8、τ=10；tanh 前以灰階單位（÷255）縮放；
