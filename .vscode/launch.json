@@ -1,0 +1,135 @@
+{
+    // Ctrl+Shift+D → 選一個 → F5。之後每完成一步會在這裡加上對應的設定。
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Step 1: 環境檢查",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/check_env.py",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Step 2: 前處理（GEAR + YOLO 標註，可重複執行）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/preprocess_dsec.py",
+            "args": ["--workers", "6"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 3: 單流基準 RGB",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_single.py",
+            "args": ["--modality", "rgb"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 3: 單流基準 event",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_single.py",
+            "args": ["--modality", "event"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 4: 雙流基準（相加，20 epochs）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_dual.py",
+            "args": ["--fusion", "add", "--epochs", "20", "--name", "dual_add_e20"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 5: 雙流 + AF（20 epochs）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_dual.py",
+            "args": ["--fusion", "af", "--epochs", "20", "--name", "dual_af_e20"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 6: 完整 HSF（TFS + AF，20 epochs）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_dual.py",
+            "args": ["--fusion", "hsf", "--epochs", "20", "--name", "dual_hsf_e20"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 6: 只有 TFS（消融用，20 epochs）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_dual.py",
+            "args": ["--fusion", "tfs", "--epochs", "20", "--name", "dual_tfs_e20"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 7: 開放世界 DSEC-OWOD（Task 1-4）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_owod.py",
+            "args": ["--fusion", "add", "--name", "owod_add"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 7: 開放世界流程測試（smoke）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_owod.py",
+            "args": ["--fusion", "add", "--smoke"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 4: 雙流流程測試（smoke）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/train_dual.py",
+            "args": ["--fusion", "add", "--smoke"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "工具: 驗證評估方式（對照 Ultralytics）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/verify_evaluator.py",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Step 2: 檢查前處理結果（畫出一張）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/check_processed.py",
+            "args": ["test", "thun_02_a", "1500"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

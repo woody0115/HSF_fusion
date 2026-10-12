@@ -1,0 +1,22 @@
+NOTE: event init checkpoint not found (E:\claude_Workspace\HSF_fusion\runs\step3\event_yolov8s\weights\best.pt); that stream starts from scratch
+config: {'fusion': 'add', 'epochs': 40, 'batch': 8, 'lr': 0.005, 'workers': 8, 'rgb_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\rgb_yolov8s\\weights\\best.pt', 'evt_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\event_yolov8s\\weights\\best.pt', 'name': None, 'smoke': True}
+train frames 1608, val frames 3861, params 16.2 M
+epoch 1/2  0/150  box 1.065 cls 1.090 dfl 1.016  lr 0.00000  0.2 min  mem 2.1 GB
+epoch 1/2  100/150  box 0.999 cls 0.933 dfl 0.927  lr 0.00111  0.7 min  mem 2.3 GB
+  val e1 1/242  (20 s)
+  val e1 51/242  (26 s)
+  val e1 101/242  (34 s)
+  val e1 151/242  (43 s)
+  val e1 201/242  (55 s)
+== epoch 1: mAP50 0.7293  mAP50-95 0.5035  P 0.802 R 0.657
+   per-class AP50-95: pedestrian 0.459, rider 0.638, car 0.685, bus 0.455, truck 0.397, bicycle 0.568, motorcycle 0.322
+epoch 2/2  0/150  box 0.972 cls 0.586 dfl 0.896  lr 0.00084  0.0 min  mem 2.7 GB
+epoch 2/2  100/150  box 0.881 cls 0.534 dfl 0.878  lr 0.00140  0.3 min  mem 2.7 GB
+  val e2 1/242  (1 s)
+  val e2 51/242  (13 s)
+  val e2 101/242  (23 s)
+  val e2 151/242  (35 s)
+  val e2 201/242  (46 s)
+== epoch 2: mAP50 0.5181  mAP50-95 0.3381  P 0.637 R 0.429
+   per-class AP50-95: pedestrian 0.347, rider 0.423, car 0.589, bus 0.286, truck 0.321, bicycle 0.375, motorcycle 0.025
+done. best mAP50-95 0.5035  -> E:\claude_Workspace\HSF_fusion\runs\step4\dual_add_smoke

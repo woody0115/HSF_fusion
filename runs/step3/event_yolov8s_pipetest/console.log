@@ -1,0 +1,495 @@
+
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels...:   0%|          | 0/965 [00:00<?, ?it/s][0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 76 images, 0 backgrounds, 0 corrupt:   8%|▊         | 76/96[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 151 images, 0 backgrounds, 0 corrupt:  16%|█▌        | 151/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 252 images, 0 backgrounds, 0 corrupt:  26%|██▌       | 252/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 353 images, 0 backgrounds, 0 corrupt:  37%|███▋      | 353/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 460 images, 0 backgrounds, 0 corrupt:  48%|████▊     | 460/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 561 images, 0 backgrounds, 0 corrupt:  58%|█████▊    | 561/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 666 images, 0 backgrounds, 0 corrupt:  69%|██████▉   | 666/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 766 images, 0 backgrounds, 0 corrupt:  79%|███████▉  | 766/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 861 images, 0 backgrounds, 0 corrupt:  89%|████████▉ | 861/[0m
+[34m[1mtrain: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 965 images, 0 backgrounds, 0 corrupt: 100%|██████████| 965/[0m
+
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels...:   0%|          | 0/3861 [00:00<?, ?it/s][0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 75 images, 0 backgrounds, 0 corrupt:   2%|▏         | 75/3861[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 178 images, 0 backgrounds, 0 corrupt:   5%|▍         | 178/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 280 images, 0 backgrounds, 0 corrupt:   7%|▋         | 280/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 376 images, 0 backgrounds, 0 corrupt:  10%|▉         | 376/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 483 images, 0 backgrounds, 0 corrupt:  13%|█▎        | 483/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 592 images, 0 backgrounds, 0 corrupt:  15%|█▌        | 592/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 707 images, 0 backgrounds, 0 corrupt:  18%|█▊        | 707/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 815 images, 0 backgrounds, 0 corrupt:  21%|██        | 815/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 926 images, 0 backgrounds, 0 corrupt:  24%|██▍       | 926/38[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1034 images, 0 backgrounds, 0 corrupt:  27%|██▋       | 1034/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1138 images, 0 backgrounds, 0 corrupt:  29%|██▉       | 1138/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1213 images, 0 backgrounds, 0 corrupt:  31%|███▏      | 1213/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1270 images, 0 backgrounds, 0 corrupt:  33%|███▎      | 1270/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1312 images, 0 backgrounds, 0 corrupt:  34%|███▍      | 1312/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1343 images, 0 backgrounds, 0 corrupt:  35%|███▍      | 1343/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1366 images, 0 backgrounds, 0 corrupt:  35%|███▌      | 1366/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1388 images, 0 backgrounds, 0 corrupt:  36%|███▌      | 1388/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1404 images, 0 backgrounds, 0 corrupt:  36%|███▋      | 1404/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1423 images, 0 backgrounds, 0 corrupt:  37%|███▋      | 1423/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1437 images, 0 backgrounds, 0 corrupt:  37%|███▋      | 1437/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1449 images, 0 backgrounds, 0 corrupt:  38%|███▊      | 1449/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1460 images, 0 backgrounds, 0 corrupt:  38%|███▊      | 1460/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1475 images, 0 backgrounds, 0 corrupt:  38%|███▊      | 1475/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1485 images, 0 backgrounds, 0 corrupt:  38%|███▊      | 1485/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1494 images, 0 backgrounds, 0 corrupt:  39%|███▊      | 1494/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1503 images, 0 backgrounds, 0 corrupt:  39%|███▉      | 1503/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1512 images, 0 backgrounds, 0 corrupt:  39%|███▉      | 1512/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1521 images, 0 backgrounds, 0 corrupt:  39%|███▉      | 1521/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1566 images, 0 backgrounds, 0 corrupt:  41%|████      | 1566/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1593 images, 0 backgrounds, 0 corrupt:  41%|████▏     | 1593/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1610 images, 0 backgrounds, 0 corrupt:  42%|████▏     | 1610/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1668 images, 0 backgrounds, 0 corrupt:  43%|████▎     | 1668/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1688 images, 0 backgrounds, 0 corrupt:  44%|████▎     | 1688/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1703 images, 0 backgrounds, 0 corrupt:  44%|████▍     | 1703/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1725 images, 0 backgrounds, 0 corrupt:  45%|████▍     | 1725/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1738 images, 0 backgrounds, 0 corrupt:  45%|████▌     | 1738/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1851 images, 0 backgrounds, 0 corrupt:  48%|████▊     | 1851/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1891 images, 0 backgrounds, 0 corrupt:  49%|████▉     | 1891/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1921 images, 0 backgrounds, 0 corrupt:  50%|████▉     | 1921/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1944 images, 0 backgrounds, 0 corrupt:  50%|█████     | 1944/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1968 images, 0 backgrounds, 0 corrupt:  51%|█████     | 1968/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1983 images, 0 backgrounds, 0 corrupt:  51%|█████▏    | 1983/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 1995 images, 0 backgrounds, 0 corrupt:  52%|█████▏    | 1995/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2005 images, 0 backgrounds, 0 corrupt:  52%|█████▏    | 2005/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2015 images, 0 backgrounds, 0 corrupt:  52%|█████▏    | 2015/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2024 images, 0 backgrounds, 0 corrupt:  52%|█████▏    | 2024/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2053 images, 2 backgrounds, 0 corrupt:  53%|█████▎    | 2053/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2065 images, 2 backgrounds, 0 corrupt:  53%|█████▎    | 2065/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2076 images, 2 backgrounds, 0 corrupt:  54%|█████▍    | 2076/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2087 images, 2 backgrounds, 0 corrupt:  54%|█████▍    | 2087/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2105 images, 2 backgrounds, 0 corrupt:  55%|█████▍    | 2105/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2130 images, 2 backgrounds, 0 corrupt:  55%|█████▌    | 2130/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2154 images, 2 backgrounds, 0 corrupt:  56%|█████▌    | 2154/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2169 images, 2 backgrounds, 0 corrupt:  56%|█████▌    | 2169/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2183 images, 2 backgrounds, 0 corrupt:  57%|█████▋    | 2183/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2207 images, 2 backgrounds, 0 corrupt:  57%|█████▋    | 2207/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2221 images, 2 backgrounds, 0 corrupt:  58%|█████▊    | 2221/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2241 images, 2 backgrounds, 0 corrupt:  58%|█████▊    | 2241/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2288 images, 2 backgrounds, 0 corrupt:  59%|█████▉    | 2288/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2317 images, 2 backgrounds, 0 corrupt:  60%|██████    | 2317/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2331 images, 2 backgrounds, 0 corrupt:  60%|██████    | 2331/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2342 images, 2 backgrounds, 0 corrupt:  61%|██████    | 2342/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2352 images, 2 backgrounds, 0 corrupt:  61%|██████    | 2352/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2366 images, 2 backgrounds, 0 corrupt:  61%|██████▏   | 2366/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2377 images, 2 backgrounds, 0 corrupt:  62%|██████▏   | 2377/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2392 images, 2 backgrounds, 0 corrupt:  62%|██████▏   | 2392/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2408 images, 2 backgrounds, 0 corrupt:  62%|██████▏   | 2408/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2418 images, 2 backgrounds, 0 corrupt:  63%|██████▎   | 2418/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2455 images, 2 backgrounds, 0 corrupt:  64%|██████▎   | 2455/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2503 images, 2 backgrounds, 0 corrupt:  65%|██████▍   | 2503/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2517 images, 2 backgrounds, 0 corrupt:  65%|██████▌   | 2517/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2529 images, 2 backgrounds, 0 corrupt:  66%|██████▌   | 2529/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2554 images, 2 backgrounds, 0 corrupt:  66%|██████▌   | 2554/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2578 images, 2 backgrounds, 0 corrupt:  67%|██████▋   | 2578/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2592 images, 2 backgrounds, 0 corrupt:  67%|██████▋   | 2592/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2603 images, 2 backgrounds, 0 corrupt:  67%|██████▋   | 2603/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2612 images, 2 backgrounds, 0 corrupt:  68%|██████▊   | 2612/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2621 images, 2 backgrounds, 0 corrupt:  68%|██████▊   | 2621/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2646 images, 2 backgrounds, 0 corrupt:  69%|██████▊   | 2646/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2655 images, 2 backgrounds, 0 corrupt:  69%|██████▉   | 2655/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2673 images, 2 backgrounds, 0 corrupt:  69%|██████▉   | 2673/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2689 images, 2 backgrounds, 0 corrupt:  70%|██████▉   | 2689/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2702 images, 2 backgrounds, 0 corrupt:  70%|██████▉   | 2702/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2713 images, 2 backgrounds, 0 corrupt:  70%|███████   | 2713/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2745 images, 2 backgrounds, 0 corrupt:  71%|███████   | 2745/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2756 images, 2 backgrounds, 0 corrupt:  71%|███████▏  | 2756/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2771 images, 2 backgrounds, 0 corrupt:  72%|███████▏  | 2771/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2793 images, 2 backgrounds, 0 corrupt:  72%|███████▏  | 2793/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2825 images, 2 backgrounds, 0 corrupt:  73%|███████▎  | 2825/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2839 images, 2 backgrounds, 0 corrupt:  74%|███████▎  | 2839/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2877 images, 2 backgrounds, 0 corrupt:  75%|███████▍  | 2877/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2895 images, 2 backgrounds, 0 corrupt:  75%|███████▍  | 2895/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2913 images, 2 backgrounds, 0 corrupt:  75%|███████▌  | 2913/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2928 images, 2 backgrounds, 0 corrupt:  76%|███████▌  | 2928/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2941 images, 2 backgrounds, 0 corrupt:  76%|███████▌  | 2941/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2956 images, 2 backgrounds, 0 corrupt:  77%|███████▋  | 2956/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2972 images, 2 backgrounds, 0 corrupt:  77%|███████▋  | 2972/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2986 images, 2 backgrounds, 0 corrupt:  77%|███████▋  | 2986/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 2996 images, 2 backgrounds, 0 corrupt:  78%|███████▊  | 2996/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3005 images, 2 backgrounds, 0 corrupt:  78%|███████▊  | 3005/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3036 images, 2 backgrounds, 0 corrupt:  79%|███████▊  | 3036/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3048 images, 2 backgrounds, 0 corrupt:  79%|███████▉  | 3048/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3058 images, 2 backgrounds, 0 corrupt:  79%|███████▉  | 3058/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3068 images, 2 backgrounds, 0 corrupt:  79%|███████▉  | 3068/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3077 images, 2 backgrounds, 0 corrupt:  80%|███████▉  | 3077/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3085 images, 2 backgrounds, 0 corrupt:  80%|███████▉  | 3085/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3091 images, 2 backgrounds, 0 corrupt:  80%|████████  | 3091/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3122 images, 2 backgrounds, 0 corrupt:  81%|████████  | 3122/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3132 images, 2 backgrounds, 0 corrupt:  81%|████████  | 3132/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3144 images, 2 backgrounds, 0 corrupt:  81%|████████▏ | 3144/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3153 images, 2 backgrounds, 0 corrupt:  82%|████████▏ | 3153/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3161 images, 2 backgrounds, 0 corrupt:  82%|████████▏ | 3161/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3170 images, 2 backgrounds, 0 corrupt:  82%|████████▏ | 3170/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3183 images, 2 backgrounds, 0 corrupt:  82%|████████▏ | 3183/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3204 images, 2 backgrounds, 0 corrupt:  83%|████████▎ | 3204/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3215 images, 2 backgrounds, 0 corrupt:  83%|████████▎ | 3215/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3248 images, 2 backgrounds, 0 corrupt:  84%|████████▍ | 3248/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3263 images, 2 backgrounds, 0 corrupt:  85%|████████▍ | 3263/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3437 images, 2 backgrounds, 0 corrupt:  89%|████████▉ | 3437/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3532 images, 2 backgrounds, 0 corrupt:  91%|█████████▏| 3532/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3627 images, 2 backgrounds, 0 corrupt:  94%|█████████▍| 3627/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3717 images, 2 backgrounds, 0 corrupt:  96%|█████████▋| 3717/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3816 images, 2 backgrounds, 0 corrupt:  99%|█████████▉| 3816/[0m
+[34m[1mval: [0mScanning D:\DSEC_processed\yolo\event\test\labels... 3861 images, 2 backgrounds, 0 corrupt: 100%|██████████| 3861/[0m
+
+  0%|          | 0/61 [00:00<?, ?it/s]
+        1/1       3.6G      2.517      4.667      1.703        561        640:   0%|          | 0/61 [00:00<?, ?it/s]
+        1/1       3.6G      2.517      4.667      1.703        561        640:   2%|▏         | 1/61 [00:00<00:49,  1.2
+        1/1       3.6G      2.502      4.618      1.705        482        640:   2%|▏         | 1/61 [00:00<00:49,  1.2
+        1/1       3.6G      2.502      4.618      1.705        482        640:   3%|▎         | 2/61 [00:00<00:25,  2.3
+        1/1       3.6G      2.458      4.702      1.699        512        640:   3%|▎         | 2/61 [00:01<00:25,  2.3
+        1/1       3.6G      2.458      4.702      1.699        512        640:   5%|▍         | 3/61 [00:01<00:17,  3.3
+        1/1      3.78G      2.468      4.666      1.703        649        640:   5%|▍         | 3/61 [00:01<00:17,  3.3
+        1/1      3.78G      2.468      4.666      1.703        649        640:   7%|▋         | 4/61 [00:01<00:13,  4.3
+        1/1      3.78G      2.443      4.679      1.697        396        640:   7%|▋         | 4/61 [00:01<00:13,  4.3
+        1/1      3.78G      2.443      4.679      1.697        396        640:   8%|▊         | 5/61 [00:01<00:10,  5.3
+        1/1      3.78G      2.437      4.689      1.704        358        640:   8%|▊         | 5/61 [00:01<00:10,  5.3
+        1/1      3.78G      2.437      4.689      1.704        358        640:  10%|▉         | 6/61 [00:01<00:08,  6.2
+        1/1       3.8G      2.433      4.699      1.721        336        640:  10%|▉         | 6/61 [00:01<00:08,  6.2
+        1/1       3.8G      2.433      4.699      1.721        336        640:  11%|█▏        | 7/61 [00:01<00:07,  6.8
+        1/1       3.8G      2.442      4.701      1.727        435        640:  11%|█▏        | 7/61 [00:01<00:07,  6.8
+        1/1       3.8G      2.442      4.701      1.727        435        640:  13%|█▎        | 8/61 [00:01<00:07,  7.1
+        1/1       3.8G      2.429      4.652      1.713        578        640:  13%|█▎        | 8/61 [00:01<00:07,  7.1
+        1/1       3.8G      2.429      4.652      1.713        578        640:  15%|█▍        | 9/61 [00:01<00:06,  7.6
+        1/1       3.8G      2.443      4.573      1.722        574        640:  15%|█▍        | 9/61 [00:01<00:06,  7.6
+        1/1       3.8G      2.443      4.573      1.722        574        640:  16%|█▋        | 10/61 [00:01<00:06,  7.
+        1/1       3.8G      2.432      4.478      1.712        562        640:  16%|█▋        | 10/61 [00:02<00:06,  7.
+        1/1       3.8G      2.432      4.478      1.712        562        640:  18%|█▊        | 11/61 [00:02<00:06,  8.
+        1/1       3.8G      2.431      4.384       1.71        575        640:  18%|█▊        | 11/61 [00:02<00:06,  8.
+        1/1       3.8G      2.431      4.384       1.71        575        640:  20%|█▉        | 12/61 [00:02<00:06,  8.
+        1/1       3.8G      2.417      4.273      1.697        648        640:  20%|█▉        | 12/61 [00:02<00:06,  8.
+        1/1       3.8G      2.417      4.273      1.697        648        640:  21%|██▏       | 13/61 [00:02<00:05,  8.
+        1/1       3.8G      2.403      4.161      1.683        553        640:  21%|██▏       | 13/61 [00:02<00:05,  8.
+        1/1       3.8G      2.403      4.161      1.683        553        640:  23%|██▎       | 14/61 [00:02<00:05,  8.
+        1/1       3.8G      2.393      4.069      1.674        508        640:  23%|██▎       | 14/61 [00:02<00:05,  8.
+        1/1       3.8G      2.393      4.069      1.674        508        640:  25%|██▍       | 15/61 [00:02<00:05,  9.
+        1/1       3.8G      2.388      3.967       1.67        398        640:  25%|██▍       | 15/61 [00:02<00:05,  9.
+        1/1       3.8G      2.388      3.967       1.67        398        640:  26%|██▌       | 16/61 [00:02<00:04,  9.
+        1/1       3.8G      2.381      3.881      1.666        446        640:  26%|██▌       | 16/61 [00:02<00:04,  9.
+        1/1       3.8G      2.381      3.881      1.666        446        640:  28%|██▊       | 17/61 [00:02<00:04,  9.
+        1/1       3.8G      2.377        3.8      1.666        432        640:  28%|██▊       | 17/61 [00:02<00:04,  9.
+        1/1       3.8G      2.377        3.8      1.666        432        640:  30%|██▉       | 18/61 [00:02<00:04,  9.
+        1/1       3.8G      2.369      3.714      1.657        476        640:  30%|██▉       | 18/61 [00:02<00:04,  9.
+        1/1       3.8G      2.369      3.714      1.657        476        640:  31%|███       | 19/61 [00:02<00:04,  9.
+        1/1       3.8G      2.366      3.628      1.651        418        640:  31%|███       | 19/61 [00:03<00:04,  9.
+        1/1       3.8G      2.366      3.628      1.651        418        640:  33%|███▎      | 20/61 [00:03<00:04,  9.
+        1/1       3.8G      2.355      3.545      1.641        526        640:  33%|███▎      | 20/61 [00:03<00:04,  9.
+        1/1       3.8G      2.355      3.545      1.641        526        640:  34%|███▍      | 21/61 [00:03<00:04,  9.
+        1/1       3.8G      2.338      3.462      1.627        592        640:  34%|███▍      | 21/61 [00:03<00:04,  9.
+        1/1       3.8G      2.338      3.462      1.627        592        640:  36%|███▌      | 22/61 [00:03<00:04,  9.
+        1/1       3.8G      2.328      3.387      1.617        518        640:  36%|███▌      | 22/61 [00:03<00:04,  9.
+        1/1       3.8G      2.328      3.387      1.617        518        640:  38%|███▊      | 23/61 [00:03<00:04,  9.
+        1/1       3.8G       2.32      3.314      1.606        704        640:  38%|███▊      | 23/61 [00:03<00:04,  9.
+        1/1       3.8G       2.32      3.314      1.606        704        640:  39%|███▉      | 24/61 [00:03<00:04,  9.
+        1/1       3.8G      2.306      3.247      1.597        499        640:  39%|███▉      | 24/61 [00:03<00:04,  9.
+        1/1       3.8G      2.306      3.247      1.597        499        640:  41%|████      | 25/61 [00:03<00:03,  9.
+        1/1       3.8G      2.296      3.184      1.588        617        640:  41%|████      | 25/61 [00:03<00:03,  9.
+        1/1       3.8G      2.296      3.184      1.588        617        640:  43%|████▎     | 26/61 [00:03<00:03,  9.
+        1/1       3.8G      2.284      3.122       1.58        443        640:  43%|████▎     | 26/61 [00:03<00:03,  9.
+        1/1       3.8G      2.284      3.122       1.58        443        640:  44%|████▍     | 27/61 [00:03<00:03,  9.
+        1/1       3.8G      2.275      3.067      1.573        551        640:  44%|████▍     | 27/61 [00:03<00:03,  9.
+        1/1       3.8G      2.275      3.067      1.573        551        640:  46%|████▌     | 28/61 [00:03<00:03,  9.
+        1/1       3.8G      2.263      3.011      1.564        491        640:  46%|████▌     | 28/61 [00:03<00:03,  9.
+        1/1       3.8G      2.263      3.011      1.564        491        640:  48%|████▊     | 29/61 [00:03<00:03,  9.
+        1/1       3.8G      2.251      2.962      1.556        508        640:  48%|████▊     | 29/61 [00:04<00:03,  9.
+        1/1       3.8G      2.251      2.962      1.556        508        640:  49%|████▉     | 30/61 [00:04<00:03,  9.
+        1/1       3.8G      2.241      2.912      1.549        470        640:  49%|████▉     | 30/61 [00:04<00:03,  9.
+        1/1       3.8G      2.241      2.912      1.549        470        640:  51%|█████     | 31/61 [00:04<00:03,  9.
+        1/1       3.8G      2.232      2.866      1.541        543        640:  51%|█████     | 31/61 [00:04<00:03,  9.
+        1/1      3.81G      2.221      2.822      1.534        601        640:  51%|█████     | 31/61 [00:04<00:03,  9.
+        1/1      3.81G      2.221      2.822      1.534        601        640:  54%|█████▍    | 33/61 [00:04<00:02,  9.
+        1/1      3.81G      2.213      2.786      1.529        466        640:  54%|█████▍    | 33/61 [00:04<00:02,  9.
+        1/1      3.81G      2.203      2.754      1.523        418        640:  54%|█████▍    | 33/61 [00:04<00:02,  9.
+        1/1      3.81G      2.203      2.754      1.523        418        640:  57%|█████▋    | 35/61 [00:04<00:02,  9.
+        1/1      3.81G      2.197      2.717      1.517        533        640:  57%|█████▋    | 35/61 [00:04<00:02,  9.
+        1/1      3.81G      2.189      2.683      1.513        471        640:  57%|█████▋    | 35/61 [00:04<00:02,  9.
+        1/1      3.81G      2.189      2.683      1.513        471        640:  61%|██████    | 37/61 [00:04<00:02,  9.
+        1/1      3.81G      2.179      2.647      1.506        440        640:  61%|██████    | 37/61 [00:04<00:02,  9.
+        1/1      3.81G      2.172      2.613      1.502        483        640:  61%|██████    | 37/61 [00:04<00:02,  9.
+        1/1      3.81G      2.172      2.613      1.502        483        640:  64%|██████▍   | 39/61 [00:04<00:02, 10.
+        1/1      3.81G      2.162      2.582      1.495        614        640:  64%|██████▍   | 39/61 [00:05<00:02, 10.
+        1/1      3.81G      2.153      2.553      1.489        494        640:  64%|██████▍   | 39/61 [00:05<00:02, 10.
+        1/1      3.81G      2.153      2.553      1.489        494        640:  67%|██████▋   | 41/61 [00:05<00:02,  9.
+        1/1      3.81G      2.144      2.524      1.483        409        640:  67%|██████▋   | 41/61 [00:05<00:02,  9.
+        1/1      3.81G      2.137      2.497      1.479        470        640:  67%|██████▋   | 41/61 [00:05<00:02,  9.
+        1/1      3.81G      2.137      2.497      1.479        470        640:  70%|███████   | 43/61 [00:05<00:01,  9.
+        1/1      3.81G      2.128       2.47      1.473        594        640:  70%|███████   | 43/61 [00:05<00:01,  9.
+        1/1      3.81G      2.118      2.443      1.467        421        640:  70%|███████   | 43/61 [00:05<00:01,  9.
+        1/1      3.81G      2.118      2.443      1.467        421        640:  74%|███████▍  | 45/61 [00:05<00:01,  9.
+        1/1      3.81G      2.112      2.419      1.462        536        640:  74%|███████▍  | 45/61 [00:05<00:01,  9.
+        1/1      3.81G      2.105      2.395      1.457        512        640:  74%|███████▍  | 45/61 [00:05<00:01,  9.
+        1/1      3.81G      2.105      2.395      1.457        512        640:  77%|███████▋  | 47/61 [00:05<00:01,  9.
+        1/1      3.81G      2.097      2.374      1.452        511        640:  77%|███████▋  | 47/61 [00:05<00:01,  9.
+        1/1      3.81G      2.092      2.354      1.449        386        640:  77%|███████▋  | 47/61 [00:05<00:01,  9.
+        1/1      3.81G      2.092      2.354      1.449        386        640:  80%|████████  | 49/61 [00:05<00:01,  9.
+        1/1      3.81G      2.084       2.33      1.444        630        640:  80%|████████  | 49/61 [00:06<00:01,  9.
+        1/1      3.81G      2.076       2.31       1.44        418        640:  80%|████████  | 49/61 [00:06<00:01,  9.
+        1/1      3.81G      2.076       2.31       1.44        418        640:  84%|████████▎ | 51/61 [00:06<00:01,  9.
+        1/1      3.81G      2.069       2.29      1.436        468        640:  84%|████████▎ | 51/61 [00:06<00:01,  9.
+        1/1      3.81G      2.062      2.271      1.432        476        640:  84%|████████▎ | 51/61 [00:06<00:01,  9.
+        1/1      3.81G      2.062      2.271      1.432        476        640:  87%|████████▋ | 53/61 [00:06<00:00,  9.
+        1/1      3.81G      2.056      2.255      1.429        541        640:  87%|████████▋ | 53/61 [00:06<00:00,  9.
+        1/1      3.81G       2.05      2.236      1.425        424        640:  87%|████████▋ | 53/61 [00:06<00:00,  9.
+        1/1      3.81G       2.05      2.236      1.425        424        640:  90%|█████████ | 55/61 [00:06<00:00,  9.
+        1/1      3.81G      2.043       2.22      1.422        467        640:  90%|█████████ | 55/61 [00:06<00:00,  9.
+        1/1      3.81G      2.036      2.205      1.419        420        640:  90%|█████████ | 55/61 [00:06<00:00,  9.
+        1/1      3.81G      2.036      2.205      1.419        420        640:  93%|█████████▎| 57/61 [00:06<00:00,  9.
+        1/1      3.81G      2.031      2.188      1.416        508        640:  93%|█████████▎| 57/61 [00:06<00:00,  9.
+        1/1      3.81G      2.024      2.172      1.412        524        640:  93%|█████████▎| 57/61 [00:07<00:00,  9.
+        1/1      3.81G      2.024      2.172      1.412        524        640:  97%|█████████▋| 59/61 [00:07<00:00,  9.
+        1/1      3.81G      2.019      2.156      1.408        513        640:  97%|█████████▋| 59/61 [00:07<00:00,  9.
+        1/1      3.83G      2.013      2.141      1.404        223        640:  97%|█████████▋| 59/61 [00:07<00:00,  9.
+        1/1      3.83G      2.013      2.141      1.404        223        640: 100%|██████████| 61/61 [00:07<00:00,  9.
+        1/1      3.83G      2.013      2.141      1.404        223        640: 100%|██████████| 61/61 [00:07<00:00,  8.
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   1%|          | 1/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   2%|▏         | 2/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   2%|▏         | 3/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   3%|▎         | 4/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   4%|▍         | 5/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   5%|▍         | 6/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   6%|▌         | 7/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   7%|▋         | 8/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   7%|▋         | 9/121 [00:02
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   8%|▊         | 10/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   9%|▉         | 11/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  10%|▉         | 12/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  11%|█         | 13/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  12%|█▏        | 14/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  12%|█▏        | 15/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  13%|█▎        | 16/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  14%|█▍        | 17/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  15%|█▍        | 18/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  16%|█▌        | 19/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  17%|█▋        | 20/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  17%|█▋        | 21/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  18%|█▊        | 22/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  19%|█▉        | 23/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  20%|█▉        | 24/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  21%|██        | 25/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  21%|██▏       | 26/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  22%|██▏       | 27/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  23%|██▎       | 28/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  24%|██▍       | 29/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  25%|██▍       | 30/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  26%|██▌       | 31/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  26%|██▋       | 32/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  27%|██▋       | 33/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  28%|██▊       | 34/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  29%|██▉       | 35/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  30%|██▉       | 36/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  31%|███       | 37/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  31%|███▏      | 38/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  32%|███▏      | 39/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  33%|███▎      | 40/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  34%|███▍      | 41/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  35%|███▍      | 42/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  36%|███▌      | 43/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  36%|███▋      | 44/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  37%|███▋      | 45/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  38%|███▊      | 46/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  39%|███▉      | 47/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  40%|███▉      | 48/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  40%|████      | 49/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  41%|████▏     | 50/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  42%|████▏     | 51/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  43%|████▎     | 52/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  44%|████▍     | 53/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  45%|████▍     | 54/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  45%|████▌     | 55/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  46%|████▋     | 56/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  47%|████▋     | 57/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  48%|████▊     | 58/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  49%|████▉     | 59/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  50%|████▉     | 60/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  50%|█████     | 61/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  51%|█████     | 62/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  52%|█████▏    | 63/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  53%|█████▎    | 64/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  54%|█████▎    | 65/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  55%|█████▍    | 66/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  55%|█████▌    | 67/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  56%|█████▌    | 68/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  57%|█████▋    | 69/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  58%|█████▊    | 70/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  59%|█████▊    | 71/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  60%|█████▉    | 72/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  60%|██████    | 73/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  61%|██████    | 74/121 [00:2
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  62%|██████▏   | 75/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  63%|██████▎   | 76/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  64%|██████▎   | 77/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  64%|██████▍   | 78/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  65%|██████▌   | 79/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  66%|██████▌   | 80/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  67%|██████▋   | 81/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  68%|██████▊   | 82/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  69%|██████▊   | 83/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  69%|██████▉   | 84/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  70%|███████   | 85/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  71%|███████   | 86/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  72%|███████▏  | 87/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  73%|███████▎  | 88/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  74%|███████▎  | 89/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  74%|███████▍  | 90/121 [00:3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  75%|███████▌  | 91/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  76%|███████▌  | 92/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  77%|███████▋  | 93/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  78%|███████▊  | 94/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  79%|███████▊  | 95/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  79%|███████▉  | 96/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  80%|████████  | 97/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  81%|████████  | 98/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  82%|████████▏ | 99/121 [00:4
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  83%|████████▎ | 100/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  83%|████████▎ | 101/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  84%|████████▍ | 102/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  85%|████████▌ | 103/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  86%|████████▌ | 104/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  87%|████████▋ | 105/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  88%|████████▊ | 106/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  88%|████████▊ | 107/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  89%|████████▉ | 108/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  90%|█████████ | 109/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  91%|█████████ | 110/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  92%|█████████▏| 111/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  93%|█████████▎| 112/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  93%|█████████▎| 113/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  94%|█████████▍| 114/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  95%|█████████▌| 115/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  96%|█████████▌| 116/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  97%|█████████▋| 117/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  98%|█████████▊| 118/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  98%|█████████▊| 119/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  99%|█████████▉| 120/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 121/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 121/121 [00:
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   1%|          | 1/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   2%|▏         | 2/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   2%|▏         | 3/121 [00:00
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   3%|▎         | 4/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   4%|▍         | 5/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   5%|▍         | 6/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   6%|▌         | 7/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   7%|▋         | 8/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   7%|▋         | 9/121 [00:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   8%|▊         | 10/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   9%|▉         | 11/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  10%|▉         | 12/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  11%|█         | 13/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  12%|█▏        | 14/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  12%|█▏        | 15/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  13%|█▎        | 16/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  14%|█▍        | 17/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  15%|█▍        | 18/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  16%|█▌        | 19/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  17%|█▋        | 20/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  17%|█▋        | 21/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  18%|█▊        | 22/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  19%|█▉        | 23/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  20%|█▉        | 24/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  21%|██        | 25/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  21%|██▏       | 26/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  22%|██▏       | 27/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  23%|██▎       | 28/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  24%|██▍       | 29/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  25%|██▍       | 30/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  26%|██▌       | 31/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  26%|██▋       | 32/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  27%|██▋       | 33/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  28%|██▊       | 34/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  29%|██▉       | 35/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  30%|██▉       | 36/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  31%|███       | 37/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  31%|███▏      | 38/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  32%|███▏      | 39/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  33%|███▎      | 40/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  34%|███▍      | 41/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  35%|███▍      | 42/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  36%|███▌      | 43/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  36%|███▋      | 44/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  37%|███▋      | 45/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  38%|███▊      | 46/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  39%|███▉      | 47/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  40%|███▉      | 48/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  40%|████      | 49/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  41%|████▏     | 50/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  42%|████▏     | 51/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  43%|████▎     | 52/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  44%|████▍     | 53/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  45%|████▍     | 54/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  45%|████▌     | 55/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  46%|████▋     | 56/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  47%|████▋     | 57/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  48%|████▊     | 58/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  49%|████▉     | 59/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  50%|████▉     | 60/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  50%|█████     | 61/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  51%|█████     | 62/121 [00:0
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  52%|█████▏    | 63/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  53%|█████▎    | 64/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  54%|█████▎    | 65/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  55%|█████▍    | 66/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  55%|█████▌    | 67/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  56%|█████▌    | 68/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  57%|█████▋    | 69/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  58%|█████▊    | 70/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  59%|█████▊    | 71/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  60%|█████▉    | 72/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  60%|██████    | 73/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  61%|██████    | 74/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  62%|██████▏   | 75/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  63%|██████▎   | 76/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  64%|██████▎   | 77/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  64%|██████▍   | 78/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  65%|██████▌   | 79/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  66%|██████▌   | 80/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  67%|██████▋   | 81/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  68%|██████▊   | 82/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  69%|██████▊   | 83/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  69%|██████▉   | 84/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  70%|███████   | 85/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  71%|███████   | 86/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  72%|███████▏  | 87/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  73%|███████▎  | 88/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  74%|███████▎  | 89/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  74%|███████▍  | 90/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  75%|███████▌  | 91/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  76%|███████▌  | 92/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  77%|███████▋  | 93/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  78%|███████▊  | 94/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  79%|███████▊  | 95/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  79%|███████▉  | 96/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  80%|████████  | 97/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  81%|████████  | 98/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  82%|████████▏ | 99/121 [00:1
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  83%|████████▎ | 100/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  83%|████████▎ | 101/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  84%|████████▍ | 102/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  85%|████████▌ | 103/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  86%|████████▌ | 104/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  87%|████████▋ | 105/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  88%|████████▊ | 106/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  88%|████████▊ | 107/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  89%|████████▉ | 108/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  90%|█████████ | 109/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  91%|█████████ | 110/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  92%|█████████▏| 111/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  93%|█████████▎| 112/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  93%|█████████▎| 113/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  94%|█████████▍| 114/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  95%|█████████▌| 115/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  96%|█████████▌| 116/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  97%|█████████▋| 117/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  98%|█████████▊| 118/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  98%|█████████▊| 119/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  99%|█████████▉| 120/121 [00:
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 121/121 [00:

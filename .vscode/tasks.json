@@ -1,0 +1,48 @@
+{
+    // Terminal > Run Task... (或 Ctrl+Shift+P → Tasks: Run Task)
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "觀察下載進度",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\tools\\watch_download.ps1"],
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "dedicated", "focus": true },
+            "runOptions": { "runOn": "folderOpen" }
+        },
+        {
+            "label": "觀察訓練過程",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\tools\\watch_training.ps1"],
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "dedicated", "focus": true },
+            "runOptions": { "runOn": "folderOpen" }
+        },
+        {
+            "label": "排程：目前這步跑完後暫停",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-Command", "Set-Content '${workspaceFolder}\\runs\\PAUSE' 'paused' ; Write-Host '已建立 runs\\PAUSE：目前這步跑完後排程會暫停'"],
+            "problemMatcher": []
+        },
+        {
+            "label": "排程：繼續（刪除暫停檔）",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-Command", "Remove-Item '${workspaceFolder}\\runs\\PAUSE' -ErrorAction SilentlyContinue ; Write-Host '已刪除 runs\\PAUSE：排程會接著跑下一步'"],
+            "problemMatcher": []
+        },
+        {
+            "label": "重新啟動下載（中斷後續傳）",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\tools\\download_dsec_det.ps1"],
+            "problemMatcher": [],
+            "presentation": { "reveal": "always", "panel": "dedicated" }
+        }
+    ]
+}

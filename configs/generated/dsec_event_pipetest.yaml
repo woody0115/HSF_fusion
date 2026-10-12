@@ -1,0 +1,13 @@
+﻿path: D:/DSEC_processed/yolo/event
+train: test/images
+val: test/images
+names:
+  0: pedestrian
+  1: rider
+  2: car
+  3: bus
+  4: truck
+  5: bicycle
+  6: motorcycle
+  7: train
+

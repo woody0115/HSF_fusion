@@ -1,0 +1,12 @@
+names:
+  0: pedestrian
+  1: rider
+  2: car
+  3: bus
+  4: truck
+  5: bicycle
+  6: motorcycle
+  7: train
+path: E:\claude_Workspace\HSF_fusion\runs
+train: E:\claude_Workspace\HSF_fusion\runs\verify_thun_02_a.txt
+val: E:\claude_Workspace\HSF_fusion\runs\verify_thun_02_a.txt

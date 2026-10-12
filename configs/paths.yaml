@@ -1,0 +1,8 @@
+# Data locations (large files on D:, code / runs on E:)
+dsec_root: D:/DSEC                      # raw DSEC-Det download (HDD: read sequentially during preprocessing only)
+processed_root: E:/DSEC_train           # training data on the NVMe SSD: RGB copies, GEAR frames, YOLO labels
+                                        # (random reads of ~70k small images per epoch are too slow on the HDD)
+runs_root: E:/claude_Workspace/HSF_fusion/runs   # training logs and checkpoints
+
+# DSEC-Det classes (class_id order in tracks.npy)
+names: [pedestrian, rider, car, bus, truck, bicycle, motorcycle, train]

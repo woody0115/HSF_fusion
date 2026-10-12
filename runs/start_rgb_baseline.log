@@ -1,0 +1,67 @@
+﻿2026-10-03 22:18:25  label stage + RGB copy to SSD ...
+2026-10-03 22:18:39    labels: 0 done, 60 to do | gear: 0 done, 0 to do | waiting for download: 0
+2026-10-03 22:19:23      labels train/interlaken_00_c: 537 labelled frames, 930 boxes (4 tiny dropped), 43 s
+2026-10-03 22:19:31      labels train/thun_00_a: 239 labelled frames, 908 boxes (4 tiny dropped), 52 s
+2026-10-03 22:21:32      labels train/zurich_city_00_a: 939 labelled frames, 7294 boxes (152 tiny dropped), 129 s
+2026-10-03 22:21:48      labels train/interlaken_00_g: 1318 labelled frames, 6956 boxes (83 tiny dropped), 188 s
+2026-10-03 22:21:56      labels train/interlaken_00_f: 1491 labelled frames, 6015 boxes (46 tiny dropped), 196 s
+2026-10-03 22:23:09      labels train/zurich_city_01_a: 681 labelled frames, 3820 boxes (24 tiny dropped), 97 s
+2026-10-03 22:23:09      labels train/interlaken_00_e: 1991 labelled frames, 6618 boxes (66 tiny dropped), 269 s
+2026-10-03 22:23:15      labels train/interlaken_00_d: 1991 labelled frames, 3581 boxes (26 tiny dropped), 275 s
+2026-10-03 22:23:39      labels train/zurich_city_00_b: 1463 labelled frames, 14918 boxes (447 tiny dropped), 247 s
+2026-10-03 22:24:28      labels train/zurich_city_02_a: 232 labelled frames, 832 boxes (8 tiny dropped), 49 s
+2026-10-03 22:24:40      labels train/zurich_city_01_d: 795 labelled frames, 8662 boxes (138 tiny dropped), 92 s
+2026-10-03 22:25:31      labels train/zurich_city_01_c: 977 labelled frames, 8597 boxes (68 tiny dropped), 215 s
+2026-10-03 22:25:34      labels train/zurich_city_01_b: 1325 labelled frames, 9992 boxes (142 tiny dropped), 227 s
+2026-10-03 22:26:50      labels train/zurich_city_01_f: 1454 labelled frames, 9971 boxes (183 tiny dropped), 215 s
+2026-10-03 22:27:22      labels train/zurich_city_02_b: 1225 labelled frames, 8273 boxes (126 tiny dropped), 174 s
+2026-10-03 22:28:19      labels train/zurich_city_01_e: 1991 labelled frames, 15028 boxes (375 tiny dropped), 310 s
+2026-10-03 22:28:35      labels train/zurich_city_03_a: 246 labelled frames, 243 boxes (3 tiny dropped), 105 s
+2026-10-03 22:28:48      labels train/zurich_city_04_b: 269 labelled frames, 2180 boxes (75 tiny dropped), 28 s
+2026-10-03 22:29:51      labels train/zurich_city_02_d: 871 labelled frames, 2442 boxes (21 tiny dropped), 260 s
+2026-10-03 22:30:00      labels train/zurich_city_04_a: 699 labelled frames, 6938 boxes (99 tiny dropped), 158 s
+2026-10-03 22:30:22      labels train/zurich_city_02_e: 1395 labelled frames, 6393 boxes (26 tiny dropped), 287 s
+2026-10-03 22:30:43      labels train/zurich_city_04_e: 269 labelled frames, 2237 boxes (8 tiny dropped), 51 s
+2026-10-03 22:32:15      labels train/zurich_city_04_f: 859 labelled frames, 6056 boxes (51 tiny dropped), 135 s
+2026-10-03 22:32:15      labels train/zurich_city_04_c: 1181 labelled frames, 8353 boxes (125 tiny dropped), 220 s
+2026-10-03 22:32:25      labels train/zurich_city_04_d: 957 labelled frames, 5704 boxes (55 tiny dropped), 218 s
+2026-10-03 22:33:49      labels train/zurich_city_02_c: 2774 labelled frames, 10380 boxes (28 tiny dropped), 549 s
+2026-10-03 22:34:22      labels train/zurich_city_08_a: 787 labelled frames, 5483 boxes (62 tiny dropped), 116 s
+2026-10-03 22:35:26      labels train/zurich_city_09_b: 367 labelled frames, 3129 boxes (63 tiny dropped), 64 s
+2026-10-03 22:35:44      labels train/zurich_city_05_b: 1526 labelled frames, 7139 boxes (60 tiny dropped), 301 s
+2026-10-03 22:36:14      labels train/zurich_city_05_a: 1386 labelled frames, 5829 boxes (44 tiny dropped), 353 s
+2026-10-03 22:36:26      labels train/zurich_city_07_a: 1463 labelled frames, 6758 boxes (124 tiny dropped), 251 s
+2026-10-03 22:36:54      labels train/zurich_city_06_a: 1230 labelled frames, 4756 boxes (41 tiny dropped), 280 s
+2026-10-03 22:37:03      labels train/zurich_city_09_e: 817 labelled frames, 4099 boxes (45 tiny dropped), 49 s
+2026-10-03 22:38:16      labels train/zurich_city_11_a: 465 labelled frames, 3010 boxes (18 tiny dropped), 73 s
+2026-10-03 22:38:34      labels train/zurich_city_09_c: 1323 labelled frames, 6296 boxes (114 tiny dropped), 188 s
+2026-10-03 22:38:45      labels train/zurich_city_09_a: 1557 labelled frames, 7804 boxes (95 tiny dropped), 296 s
+2026-10-03 22:40:35      labels train/zurich_city_09_d: 1699 labelled frames, 11119 boxes (131 tiny dropped), 291 s
+2026-10-03 22:42:53      labels train/zurich_city_10_a: 1347 labelled frames, 5586 boxes (20 tiny dropped), 387 s
+2026-10-03 22:43:21      labels train/zurich_city_11_b: 1846 labelled frames, 8202 boxes (48 tiny dropped), 305 s
+2026-10-03 22:43:27      labels train/zurich_city_11_c: 1957 labelled frames, 12821 boxes (50 tiny dropped), 293 s
+2026-10-03 22:43:28      labels train/zurich_city_16_a: 1156 labelled frames, 3607 boxes (107 tiny dropped), 283 s
+2026-10-03 22:43:57      labels train/zurich_city_10_b: 2365 labelled frames, 10481 boxes (130 tiny dropped), 423 s
+2026-10-03 22:46:24      labels train/zurich_city_19_a: 1504 labelled frames, 4838 boxes (47 tiny dropped), 182 s
+2026-10-03 22:46:30      labels train/zurich_city_20_a: 1686 labelled frames, 10413 boxes (173 tiny dropped), 183 s
+2026-10-03 22:46:35      labels train/zurich_city_17_a: 452 labelled frames, 710 boxes (10 tiny dropped), 360 s
+2026-10-03 22:47:08      labels train/zurich_city_18_a: 1503 labelled frames, 6056 boxes (121 tiny dropped), 255 s
+2026-10-03 22:47:11      labels test/thun_01_a: 197 labelled frames, 715 boxes (46 tiny dropped), 36 s
+2026-10-03 22:48:20      labels test/interlaken_00_a: 1134 labelled frames, 1682 boxes (0 tiny dropped), 263 s
+2026-10-03 22:49:48      labels test/zurich_city_12_a: 705 labelled frames, 2739 boxes (17 tiny dropped), 87 s
+2026-10-03 22:50:35      labels test/interlaken_00_b: 1101 labelled frames, 1863 boxes (1 tiny dropped), 251 s
+2026-10-03 22:50:36      labels test/thun_01_b: 1079 labelled frames, 3497 boxes (7 tiny dropped), 207 s
+2026-10-03 22:51:02      labels test/zurich_city_13_a: 379 labelled frames, 1489 boxes (8 tiny dropped), 74 s
+2026-10-03 22:51:38      labels train/zurich_city_21_a: 1881 labelled frames, 5273 boxes (9 tiny dropped), 490 s
+2026-10-03 22:51:43      labels test/zurich_city_13_b: 315 labelled frames, 2628 boxes (39 tiny dropped), 68 s
+2026-10-03 22:52:04      labels test/zurich_city_14_a: 439 labelled frames, 2090 boxes (34 tiny dropped), 88 s
+2026-10-03 22:52:27      labels test/zurich_city_14_b: 577 labelled frames, 2918 boxes (63 tiny dropped), 85 s
+2026-10-03 22:53:34      labels test/interlaken_01_a: 1676 labelled frames, 4191 boxes (16 tiny dropped), 424 s
+2026-10-03 22:54:16      labels test/zurich_city_15_a: 1239 labelled frames, 8775 boxes (61 tiny dropped), 153 s
+2026-10-03 22:54:17      labels test/zurich_city_14_c: 1191 labelled frames, 5564 boxes (87 tiny dropped), 159 s
+2026-10-03 22:55:16      labels test/thun_02_a: 3861 labelled frames, 50161 boxes (802 tiny dropped), 485 s
+2026-10-03 22:55:16    finished 60 jobs in 36.6 min
+2026-10-03 22:55:55    E:\claude_Workspace\HSF_fusion\tools\..\configs\generated\dsec_rgb.yaml: train 56486 / val 13893 labelled frames
+2026-10-03 22:55:55    E:\claude_Workspace\HSF_fusion\tools\..\configs\generated\dsec_event.yaml: train 8182 / val 3861 labelled frames
+2026-10-03 22:55:55  starting RGB-only YOLOv8s baseline
+2026-10-04 00:24:51  RGB baseline finished (exit 0)

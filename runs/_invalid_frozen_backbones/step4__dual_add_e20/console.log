@@ -1,0 +1,19 @@
+config: {'fusion': 'add', 'epochs': 20, 'batch': 8, 'lr': 0.005, 'workers': 8, 'rgb_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\rgb_yolov8s\\weights\\best.pt', 'evt_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\event_yolov8s\\weights\\best.pt', 'name': 'dual_add_e20', 'clips': 4, 'clip_len': 4, 'smoke': False}
+train frames 56486, val frames 13893, params 16.2 M
+Traceback (most recent call last):
+  File "E:\claude_Workspace\HSF_fusion\tools\train_dual.py", line 59, in <module>
+    main()
+    ~~~~^^
+  File "E:\claude_Workspace\HSF_fusion\tools\train_dual.py", line 55, in main
+    train(model, run_dir, batch=a.batch, lr=a.lr, workers=a.workers, **smoke)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\claude_Workspace\HSF_fusion\hsf\engine.py", line 295, in train
+    opt = build_optimizer(model, lr, momentum, weight_decay)
+  File "E:\claude_Workspace\HSF_fusion\hsf\engine.py", line 69, in build_optimizer
+    opt = torch.optim.SGD(g_b, lr=lr, momentum=momentum, nesterov=True)
+  File "E:\claude_Workspace\HSF_fusion\.venv\Lib\site-packages\torch\optim\sgd.py", line 63, in __init__
+    super().__init__(params, defaults)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "E:\claude_Workspace\HSF_fusion\.venv\Lib\site-packages\torch\optim\optimizer.py", line 364, in __init__
+    raise ValueError("optimizer got an empty parameter list")
+ValueError: optimizer got an empty parameter list

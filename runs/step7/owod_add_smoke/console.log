@@ -1,0 +1,40 @@
+config: {'fusion': 'add', 'base_epochs': 10, 'tune_epochs': 1, 'workers': 8, 'name': None, 'smoke': True}
+tasks: {'T1': {'classes': [2], 'note': 'car'}, 'T2': {'classes': [3, 4], 'note': 'large vehicles (bus', 'truck)': None}, 'T3': {'classes': [0, 1], 'note': 'people (pedestrian', 'rider)': None}, 'T4': {'classes': [5, 6], 'note': 'two-wheelers (bicycle', 'motorcycle)': None}}
+
+===== T1: previously known [], current ['car'], unknown ['pedestrian', 'rider', 'bus', 'truck', 'bicycle', 'motorcycle'] =====
+train frames 1608, val frames 3861, params 16.4 M
+epoch 1/1  0/40  box 1.697 cls 13.911 dfl 1.456  lr 0.00000  0.3 min  mem 0.8 GB
+  val e1 1/242  (15 s)
+  val e1 51/242  (26 s)
+  val e1 101/242  (37 s)
+  val e1 151/242  (48 s)
+  val e1 201/242  (59 s)
+== epoch 1: mAP50 0.5877  mAP50-95 0.2775  P 0.680 R 0.524
+   per-class AP50-95: car 0.278
+done. best mAP50-95 0.2775  -> E:\claude_Workspace\HSF_fusion\runs\step7\owod_add_smoke\T1_base
+  object wildcard: epoch 1/1 0/40 loss 115.8567 (0.2 min)
+  embeddings cur=[2]: epoch 1/1 0/40 loss 175.3948 (0.2 min)
+  owod eval 1/242 (13 s)
+T1: U-Recall 25.5  WI 0.2760  A-OSE 6253  mAP PK - CK 58.4 Both 58.4  per-class AP50 {'car': 58.38}
+
+===== T2: previously known ['car'], current ['bus', 'truck'], unknown ['pedestrian', 'rider', 'bicycle', 'motorcycle'] =====
+  embeddings cur=[3, 4]: epoch 1/1 0/40 loss 490.8059 (0.2 min)
+  owod eval 1/242 (13 s)
+T2: U-Recall 26.1  WI 0.2648  A-OSE 5645  mAP PK 58.3 CK 0.9 Both 20.0  per-class AP50 {'car': 58.32, 'bus': 1.8, 'truck': 0.0}
+
+===== T3: previously known ['car', 'bus', 'truck'], current ['pedestrian', 'rider'], unknown ['bicycle', 'motorcycle'] =====
+  embeddings cur=[0, 1]: epoch 1/1 0/40 loss 330.2584 (0.2 min)
+  owod eval 1/242 (14 s)
+T3: U-Recall 18.3  WI 0.0670  A-OSE 780  mAP PK 19.8 CK 22.1 Both 20.7  per-class AP50 {'car': 58.08, 'bus': 1.26, 'truck': 0.0, 'pedestrian': 44.29, 'rider': 0.01}
+
+===== T4: previously known ['car', 'bus', 'truck', 'pedestrian', 'rider'], current ['bicycle', 'motorcycle'], unknown [] =====
+  embeddings cur=[5, 6]: epoch 1/1 0/40 loss 1567.3981 (0.2 min)
+  owod eval 1/242 (14 s)
+T4: U-Recall -  WI 0.0000  A-OSE 0  mAP PK 20.7 CK 0.1 Both 14.8  per-class AP50 {'car': 58.07, 'bus': 1.34, 'truck': 0.0, 'pedestrian': 44.25, 'rider': 0.01, 'bicycle': 0.16, 'motorcycle': 0.0}
+
+| Task | WI ↓ | A-OSE ↓ | U-Recall ↑ | mAP PK | mAP CK | mAP Both |
+|---|---|---|---|---|---|---|
+| T1 | 0.2760 | 6253 | 25.5 | - | 58.4 | 58.4 |
+| T2 | 0.2648 | 5645 | 26.1 | 58.3 | 0.9 | 20.0 |
+| T3 | 0.0670 | 780 | 18.3 | 19.8 | 22.1 | 20.7 |
+| T4 | 0.0000 | 0 | - | 20.7 | 0.1 | 14.8 |

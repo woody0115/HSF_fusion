@@ -1,0 +1,2 @@
+epoch,box_loss,cls_loss,dfl_loss,precision,recall,mAP50,mAP50-95,lr,minutes
+1,1.5864,5.3963,1.2052,0.68041,0.52371,0.58772,0.27751,0.0001,1.5

@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pt
+*.pth
+*.7z
+
+# runs/: keep only text results (metrics tables, results.csv, logs, configs); no checkpoints or images
+runs/**
+!runs/**/
+!runs/**/*.csv
+!runs/**/*.md
+!runs/**/*.json
+!runs/**/*.yaml
+!runs/**/*.txt
+!runs/**/*.log
+runs/PAUSE

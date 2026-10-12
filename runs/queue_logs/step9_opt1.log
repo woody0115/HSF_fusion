@@ -1,0 +1,42 @@
+train-split unknown recall (T1): a=0: @10 12.8 @30 19.4 all 19.8  a=0.25: @10 12.8 @30 19.4 all 19.9  a=0.5: @10 12.6 @30 19.1 all 19.5  a=1.0: @10 12.1 @30 18.5 all 19.4  a=2.0: @10 11.2 @30 18.5 all 20.8  -> alpha 0.25
+  owod eval 1/869 (12 s)
+  owod eval 201/869 (49 s)
+  owod eval 401/869 (89 s)
+  owod eval 601/869 (132 s)
+  owod eval 801/869 (175 s)
+T1 alpha 0: U-Recall 9.85  @10 7.39  @30 9.78  WI 0.0154  A-OSE 3017
+T1 alpha 0.25: U-Recall 10.28  @10 7.53  @30 10.20  WI 0.0154  A-OSE 3017
+T1 alpha 0.5: U-Recall 10.93  @10 7.66  @30 10.80  WI 0.0154  A-OSE 3017
+T1 alpha 1.0: U-Recall 12.11  @10 7.66  @30 11.76  WI 0.0154  A-OSE 3017
+T1 alpha 2.0: U-Recall 15.07  @10 7.40  @30 12.91  WI 0.0154  A-OSE 3015
+  owod eval 1/869 (13 s)
+  owod eval 201/869 (51 s)
+  owod eval 401/869 (95 s)
+  owod eval 601/869 (142 s)
+  owod eval 801/869 (189 s)
+T2 alpha 0: U-Recall 5.09  @10 3.29  @30 5.01  WI 0.0038  A-OSE 1751
+T2 alpha 0.25: U-Recall 5.46  @10 3.50  @30 5.38  WI 0.0038  A-OSE 1750
+T2 alpha 0.5: U-Recall 5.97  @10 3.69  @30 5.82  WI 0.0038  A-OSE 1749
+T2 alpha 1.0: U-Recall 7.17  @10 3.93  @30 6.69  WI 0.0038  A-OSE 1748
+T2 alpha 2.0: U-Recall 10.76  @10 4.18  @30 7.91  WI 0.0038  A-OSE 1707
+  owod eval 1/869 (13 s)
+  owod eval 201/869 (53 s)
+  owod eval 401/869 (107 s)
+  owod eval 601/869 (162 s)
+  owod eval 801/869 (212 s)
+T3 alpha 0: U-Recall 6.55  @10 4.60  @30 6.47  WI 0.0038  A-OSE 1710
+T3 alpha 0.25: U-Recall 7.08  @10 4.84  @30 7.00  WI 0.0038  A-OSE 1703
+T3 alpha 0.5: U-Recall 7.65  @10 5.15  @30 7.61  WI 0.0038  A-OSE 1691
+T3 alpha 1.0: U-Recall 9.82  @10 5.73  @30 9.43  WI 0.0038  A-OSE 1671
+T3 alpha 2.0: U-Recall 15.72  @10 6.81  @30 13.53  WI 0.0037  A-OSE 1561
+Traceback (most recent call last):
+  File "E:\claude_Workspace\HSF_fusion\tools\owod_event_rescore.py", line 144, in <module>
+    main()
+    ~~~~^^
+  File "E:\claude_Workspace\HSF_fusion\tools\owod_event_rescore.py", line 123, in main
+    gain = {k: mean(best, k) - mean(0.0 if 0.0 in a.alphas else a.alphas[0], k) for k in ('U-Recall', 'U-Recall@30')}
+                               ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\claude_Workspace\HSF_fusion\tools\owod_event_rescore.py", line 122, in <lambda>
+    mean = lambda al, key: float(np.mean([results[t][str(al)][key] for t in results]))   # noqa: E731
+                                          ~~~~~~~~~~^^^^^^^^^
+KeyError: '0.0'

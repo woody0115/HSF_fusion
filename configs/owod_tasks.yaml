@@ -1,0 +1,12 @@
+# DSEC-OWOD: open-world incremental task split (semantic groups, like S-OWODB / nu-OWODB).
+# Each task introduces new known classes; classes of later tasks are "unknown" during that task.
+# Same images for every task; only the current task's labels are given for training.
+# Class ids follow DSEC-Det: 0 pedestrian, 1 rider, 2 car, 3 bus, 4 truck, 5 bicycle, 6 motorcycle, 7 train
+# (train has no boxes in DSEC-Det and is not used).
+tasks:
+  T1: {classes: [2],    note: car}
+  T2: {classes: [3, 4], note: large vehicles (bus, truck)}
+  T3: {classes: [0, 1], note: people (pedestrian, rider)}
+  T4: {classes: [5, 6], note: two-wheelers (bicycle, motorcycle)}
+# Metrics per task (YOLO-UniOW Tab. 2/3): U-Recall, WI, A-OSE, mAP of previously known (PK),
+# current known (CK) and both. T4 has no unknowns left, so only mAP is reported there.

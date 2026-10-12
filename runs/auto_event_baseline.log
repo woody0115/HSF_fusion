@@ -1,0 +1,62 @@
+﻿2026-10-03 21:26:18  waiting for the DSEC download to finish ...
+2026-10-04 03:31:21  download finished -> preprocessing
+2026-10-04 03:31:27    labels: 60 done, 0 to do | gear: 7 done, 53 to do | waiting for download: 0
+2026-10-04 03:33:19      gear   train/interlaken_00_c: 537 frames, 836,865 ev/frame, 112 s
+2026-10-04 03:33:46      gear   train/thun_00_a: 239 frames, 556,588 ev/frame, 138 s
+2026-10-04 03:34:28      gear   train/interlaken_00_f: 1491 frames, 298,260 ev/frame, 181 s
+2026-10-04 03:35:49      gear   train/zurich_city_00_a: 939 frames, 501,456 ev/frame, 150 s
+2026-10-04 03:37:34      gear   train/interlaken_00_g: 1335 frames, 395,802 ev/frame, 366 s
+2026-10-04 03:37:44      gear   train/zurich_city_01_a: 681 frames, 475,790 ev/frame, 196 s
+2026-10-04 03:37:55      gear   train/zurich_city_00_b: 1463 frames, 332,963 ev/frame, 250 s
+2026-10-04 03:38:21      gear   train/interlaken_00_d: 1991 frames, 985,656 ev/frame, 414 s
+2026-10-04 03:39:15      gear   train/interlaken_00_e: 1991 frames, 578,662 ev/frame, 468 s
+2026-10-04 03:39:40      gear   train/zurich_city_01_d: 795 frames, 629,440 ev/frame, 116 s
+2026-10-04 03:39:52      gear   train/zurich_city_01_b: 1325 frames, 545,806 ev/frame, 242 s
+2026-10-04 03:40:36      gear   train/zurich_city_02_a: 235 frames, 718,346 ev/frame, 81 s
+2026-10-04 03:41:53      gear   train/zurich_city_01_c: 977 frames, 717,912 ev/frame, 259 s
+2026-10-04 03:42:52      gear   train/zurich_city_01_e: 1991 frames, 469,877 ev/frame, 297 s
+2026-10-04 03:42:54      gear   train/zurich_city_01_f: 1573 frames, 661,003 ev/frame, 273 s
+2026-10-04 03:45:12      gear   train/zurich_city_04_a: 701 frames, 452,799 ev/frame, 138 s
+2026-10-04 03:46:14      gear   train/zurich_city_04_b: 269 frames, 380,936 ev/frame, 62 s
+2026-10-04 03:46:27      gear   train/zurich_city_02_d: 1843 frames, 429,928 ev/frame, 351 s
+2026-10-04 03:47:06      gear   train/zurich_city_03_a: 883 frames, 1,113,858 ev/frame, 254 s
+2026-10-04 03:47:48      gear   train/zurich_city_04_e: 269 frames, 452,400 ev/frame, 42 s
+2026-10-04 03:48:20      gear   train/zurich_city_02_e: 1845 frames, 1,195,811 ev/frame, 388 s
+2026-10-04 03:48:45      gear   train/zurich_city_02_b: 1225 frames, 825,820 ev/frame, 545 s
+2026-10-04 03:48:46      gear   train/zurich_city_04_d: 957 frames, 322,855 ev/frame, 139 s
+2026-10-04 03:49:41      gear   train/zurich_city_04_c: 1181 frames, 306,008 ev/frame, 207 s
+2026-10-04 03:52:46      gear   train/zurich_city_05_b: 1629 frames, 597,111 ev/frame, 241 s
+2026-10-04 03:53:13      gear   train/zurich_city_07_a: 1463 frames, 578,381 ev/frame, 211 s
+2026-10-04 03:53:28      gear   train/zurich_city_05_a: 1753 frames, 526,791 ev/frame, 307 s
+2026-10-04 03:53:31      gear   train/zurich_city_02_c: 2883 frames, 1,171,073 ev/frame, 819 s
+2026-10-04 03:54:10      gear   train/zurich_city_06_a: 1523 frames, 902,133 ev/frame, 324 s
+2026-10-04 03:54:32      gear   train/zurich_city_09_b: 367 frames, 426,476 ev/frame, 64 s
+2026-10-04 03:55:25      gear   train/zurich_city_08_a: 787 frames, 626,785 ev/frame, 160 s
+2026-10-04 03:55:36      gear   train/zurich_city_04_f: 859 frames, 367,921 ev/frame, 468 s
+2026-10-04 03:57:05      gear   train/zurich_city_09_e: 817 frames, 480,796 ev/frame, 154 s
+2026-10-04 03:57:33      gear   train/zurich_city_09_c: 1323 frames, 410,901 ev/frame, 242 s
+2026-10-04 03:58:12      gear   train/zurich_city_11_a: 465 frames, 246,693 ev/frame, 67 s
+2026-10-04 03:59:30      gear   train/zurich_city_09_a: 1813 frames, 1,034,856 ev/frame, 377 s
+2026-10-04 04:00:13      gear   train/zurich_city_09_d: 1699 frames, 485,289 ev/frame, 363 s
+2026-10-04 04:03:28      gear   train/zurich_city_11_c: 1957 frames, 450,136 ev/frame, 316 s
+2026-10-04 04:04:00      gear   train/zurich_city_11_b: 1933 frames, 390,742 ev/frame, 387 s
+2026-10-04 04:04:47      gear   test/thun_01_a: 197 frames, 683,478 ev/frame, 47 s
+2026-10-04 04:04:56      gear   test/interlaken_00_a: 1143 frames, 1,127,386 ev/frame, 326 s
+2026-10-04 04:07:02      gear   test/interlaken_00_b: 1617 frames, 920,400 ev/frame, 409 s
+2026-10-04 04:07:57      gear   train/zurich_city_10_a: 2315 frames, 1,032,330 ev/frame, 752 s
+2026-10-04 04:08:27      gear   test/zurich_city_12_a: 765 frames, 1,066,651 ev/frame, 211 s
+2026-10-04 04:08:37      gear   test/thun_01_b: 1079 frames, 665,585 ev/frame, 229 s
+2026-10-04 04:08:49      gear   test/zurich_city_13_a: 379 frames, 394,079 ev/frame, 106 s
+2026-10-04 04:08:49      gear   train/zurich_city_10_b: 2405 frames, 1,310,507 ev/frame, 793 s
+2026-10-04 04:09:00      gear   test/zurich_city_13_b: 315 frames, 595,466 ev/frame, 62 s
+2026-10-04 04:09:29      gear   test/zurich_city_14_a: 439 frames, 413,635 ev/frame, 62 s
+2026-10-04 04:09:36      gear   test/zurich_city_14_b: 577 frames, 248,210 ev/frame, 60 s
+2026-10-04 04:09:42      gear   test/interlaken_01_a: 2263 frames, 342,486 ev/frame, 374 s
+2026-10-04 04:10:10      gear   test/zurich_city_14_c: 1191 frames, 332,765 ev/frame, 81 s
+2026-10-04 04:10:19      gear   test/zurich_city_15_a: 1239 frames, 605,398 ev/frame, 90 s
+2026-10-04 04:10:19    finished 53 jobs in 38.9 min
+2026-10-04 04:10:56    E:\claude_Workspace\HSF_fusion\tools\..\configs\generated\dsec_rgb.yaml: train 56486 / val 13893 labelled frames
+2026-10-04 04:10:56    E:\claude_Workspace\HSF_fusion\tools\..\configs\generated\dsec_event.yaml: train 56486 / val 13893 labelled frames
+2026-10-04 04:10:56  waiting for the GPU (another training run may still be active) ...
+2026-10-04 04:10:56  starting event-only YOLOv8s baseline
+2026-10-04 05:23:48  event baseline finished (exit 0)

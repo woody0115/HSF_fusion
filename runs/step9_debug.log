@@ -1,0 +1,36 @@
+train-split unknown recall (T1): a=0.0: @10 7.3 @30 12.2 all 14.6  a=1.0: @10 7.3 @30 14.6 all 17.1  -> alpha 1.0
+  owod eval 1/869 (13 s)
+  owod eval 201/869 (36 s)
+  owod eval 401/869 (60 s)
+  owod eval 601/869 (85 s)
+  owod eval 801/869 (110 s)
+T1 alpha 0.0: U-Recall 9.85  @10 7.39  @30 9.78  WI 0.0154  A-OSE 3017
+T1 alpha 1.0: U-Recall 12.11  @10 7.66  @30 11.76  WI 0.0154  A-OSE 3017
+  owod eval 1/869 (13 s)
+  owod eval 201/869 (35 s)
+  owod eval 401/869 (61 s)
+  owod eval 601/869 (87 s)
+  owod eval 801/869 (114 s)
+T2 alpha 0.0: U-Recall 5.09  @10 3.29  @30 5.01  WI 0.0038  A-OSE 1751
+T2 alpha 1.0: U-Recall 7.17  @10 3.93  @30 6.69  WI 0.0038  A-OSE 1748
+  owod eval 1/869 (13 s)
+  owod eval 201/869 (36 s)
+  owod eval 401/869 (64 s)
+  owod eval 601/869 (92 s)
+  owod eval 801/869 (119 s)
+T3 alpha 0.0: U-Recall 6.55  @10 4.60  @30 6.47  WI 0.0038  A-OSE 1710
+T3 alpha 1.0: U-Recall 9.82  @10 5.73  @30 9.43  WI 0.0038  A-OSE 1671
+# Option 1: event rescoring of the unknown score (owod_add)
+
+alpha chosen on 2000 training frames (T1 unknown recall, never the test split): **1.0**
+
+| Task | alpha | U-Recall | U-Recall@10 | U-Recall@30 | WI | A-OSE |
+|---|---|---|---|---|---|---|
+| T1 | 0.0 | 9.85 | 7.39 | 9.78 | 0.0154 | 3017 |
+| T1 | 1.0 (chosen) | 12.11 | 7.66 | 11.76 | 0.0154 | 3017 |
+| T2 | 0.0 | 5.09 | 3.29 | 5.01 | 0.0038 | 1751 |
+| T2 | 1.0 (chosen) | 7.17 | 3.93 | 6.69 | 0.0038 | 1748 |
+| T3 | 0.0 | 6.55 | 4.60 | 6.47 | 0.0038 | 1710 |
+| T3 | 1.0 (chosen) | 9.82 | 5.73 | 9.43 | 0.0038 | 1671 |
+
+mean gain over T1-T3 at the chosen alpha: U-Recall +2.54, U-Recall@30 +2.21 -> effect: **True**

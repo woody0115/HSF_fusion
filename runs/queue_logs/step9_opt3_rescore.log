@@ -1,0 +1,54 @@
+train-split unknown recall (T1): a=0.0: @10 10.8 @30 19.6 all 25.7  a=0.25: @10 10.3 @30 18.4 all 25.0  a=0.5: @10 10.0 @30 17.8 all 24.1  a=1.0: @10 9.4 @30 15.9 all 22.8  a=2.0: @10 7.6 @30 13.8 all 21.3  -> alpha 0.0
+  owod eval 1/869 (12 s)
+  owod eval 201/869 (57 s)
+  owod eval 401/869 (108 s)
+  owod eval 601/869 (161 s)
+  owod eval 801/869 (213 s)
+T1 alpha 0.0: U-Recall 16.42  @10 7.08  @30 12.86  WI 0.0180  A-OSE 4996
+T1 alpha 0.25: U-Recall 16.60  @10 6.98  @30 12.59  WI 0.0180  A-OSE 4929
+T1 alpha 0.5: U-Recall 16.75  @10 6.82  @30 12.33  WI 0.0180  A-OSE 4858
+T1 alpha 1.0: U-Recall 17.08  @10 6.55  @30 11.93  WI 0.0180  A-OSE 4669
+T1 alpha 2.0: U-Recall 17.58  @10 5.62  @30 11.26  WI 0.0180  A-OSE 4000
+  owod eval 1/869 (13 s)
+  owod eval 201/869 (60 s)
+  owod eval 401/869 (113 s)
+  owod eval 601/869 (169 s)
+  owod eval 801/869 (226 s)
+T2 alpha 0.0: U-Recall 12.29  @10 4.86  @30 9.02  WI 0.0055  A-OSE 2897
+T2 alpha 0.25: U-Recall 12.66  @10 4.94  @30 9.10  WI 0.0055  A-OSE 2857
+T2 alpha 0.5: U-Recall 13.05  @10 4.96  @30 9.13  WI 0.0055  A-OSE 2786
+T2 alpha 1.0: U-Recall 13.74  @10 4.79  @30 9.14  WI 0.0055  A-OSE 2631
+T2 alpha 2.0: U-Recall 14.53  @10 4.05  @30 8.96  WI 0.0055  A-OSE 2089
+  owod eval 1/869 (12 s)
+  owod eval 201/869 (63 s)
+  owod eval 401/869 (124 s)
+  owod eval 601/869 (184 s)
+  owod eval 801/869 (244 s)
+T3 alpha 0.0: U-Recall 26.02  @10 14.18  @30 22.31  WI 0.0045  A-OSE 1565
+T3 alpha 0.25: U-Recall 26.35  @10 14.32  @30 22.62  WI 0.0046  A-OSE 1537
+T3 alpha 0.5: U-Recall 26.88  @10 14.30  @30 22.77  WI 0.0047  A-OSE 1508
+T3 alpha 1.0: U-Recall 27.87  @10 13.07  @30 22.91  WI 0.0050  A-OSE 1427
+T3 alpha 2.0: U-Recall 30.40  @10 9.87  @30 22.60  WI 0.0057  A-OSE 1162
+# Option 1: event rescoring of the unknown score (owod_add_evtign)
+
+alpha chosen on 2000 training frames (T1 unknown recall, never the test split): **0.0**
+
+| Task | alpha | U-Recall | U-Recall@10 | U-Recall@30 | WI | A-OSE |
+|---|---|---|---|---|---|---|
+| T1 | 0.0 (chosen) | 16.42 | 7.08 | 12.86 | 0.0180 | 4996 |
+| T1 | 0.25 | 16.60 | 6.98 | 12.59 | 0.0180 | 4929 |
+| T1 | 0.5 | 16.75 | 6.82 | 12.33 | 0.0180 | 4858 |
+| T1 | 1.0 | 17.08 | 6.55 | 11.93 | 0.0180 | 4669 |
+| T1 | 2.0 | 17.58 | 5.62 | 11.26 | 0.0180 | 4000 |
+| T2 | 0.0 (chosen) | 12.29 | 4.86 | 9.02 | 0.0055 | 2897 |
+| T2 | 0.25 | 12.66 | 4.94 | 9.10 | 0.0055 | 2857 |
+| T2 | 0.5 | 13.05 | 4.96 | 9.13 | 0.0055 | 2786 |
+| T2 | 1.0 | 13.74 | 4.79 | 9.14 | 0.0055 | 2631 |
+| T2 | 2.0 | 14.53 | 4.05 | 8.96 | 0.0055 | 2089 |
+| T3 | 0.0 (chosen) | 26.02 | 14.18 | 22.31 | 0.0045 | 1565 |
+| T3 | 0.25 | 26.35 | 14.32 | 22.62 | 0.0046 | 1537 |
+| T3 | 0.5 | 26.88 | 14.30 | 22.77 | 0.0047 | 1508 |
+| T3 | 1.0 | 27.87 | 13.07 | 22.91 | 0.0050 | 1427 |
+| T3 | 2.0 | 30.40 | 9.87 | 22.60 | 0.0057 | 1162 |
+
+mean gain over T1-T3 at the chosen alpha: U-Recall +0.00, U-Recall@30 +0.00 -> effect: **False**

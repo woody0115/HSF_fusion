@@ -1,0 +1,49 @@
+﻿2026-10-04 15:51:59  start step4_add : tools\train_dual.py --fusion add --epochs 20 --name dual_add_e20
+2026-10-04 19:43:27  end   step4_add (exit 0)
+2026-10-05 01:36:54  start step5_af : tools\train_dual.py --fusion af --epochs 20 --name dual_af_e20
+2026-10-05 01:36:56  end   step5_af (exit 1)
+2026-10-05 01:36:56  start step6_hsf : tools\train_dual.py --fusion hsf --epochs 20 --name dual_hsf_e20
+2026-10-05 01:36:57  end   step6_hsf (exit 1)
+2026-10-05 01:36:57  start step7_owod : tools\train_owod.py --fusion add --name owod_add
+2026-10-05 01:36:57  end   step7_owod (exit 1)
+2026-10-05 01:36:57  queue finished
+2026-10-05 01:51:09  start step5_af : tools\train_dual.py --fusion af --epochs 20 --name dual_af_e20
+2026-10-05 05:57:34  end   step5_af (exit 0)
+2026-10-05 05:57:34  start step6_hsf : tools\train_dual.py --fusion hsf --epochs 20 --name dual_hsf_e20
+2026-10-05 12:13:16  end   step6_hsf (exit 0)
+2026-10-05 12:13:16  start step7_owod : tools\train_owod.py --fusion add --name owod_add
+2026-10-05 14:45:48  end   step7_owod (exit 0)
+2026-10-05 14:45:48  queue finished
+2026-10-05 15:47:54  start add_lr1e3 : tools\train_dual.py --fusion add --epochs 5 --lr 0.001 --warmup 1 --name dual_add_lr1e3_e5
+2026-10-05 16:13:32  start add_lr1e3 : tools\train_dual.py --fusion add --epochs 5 --lr 0.001 --warmup 1 --name dual_add_lr1e3_e5
+2026-10-05 17:05:02  end   add_lr1e3 (exit 0)
+2026-10-05 17:05:02  start af_lr1e3 : tools\train_dual.py --fusion af --epochs 5 --lr 0.001 --warmup 1 --name dual_af_lr1e3_e5
+2026-10-05 20:11:44  end   af_lr1e3 (exit 0)
+2026-10-05 20:11:44  start hsf_lr1e3 : tools\train_dual.py --fusion hsf --epochs 5 --lr 0.001 --warmup 1 --name dual_hsf_lr1e3_e5
+2026-10-05 21:51:54  end   hsf_lr1e3 (exit 0)
+2026-10-05 21:51:54  start eval_cond : tools\eval_conditions.py --models add_lr1e3 af_lr1e3 hsf_lr1e3
+2026-10-05 21:59:03  end   eval_cond (exit 0)
+2026-10-05 21:59:03  queue finished
+2026-10-06 01:51:08  start eval_route : tools\eval_conditions.py --models route_add route_af
+2026-10-06 01:54:31  end   eval_route (exit 0)
+2026-10-06 01:54:31  start step8_iaf_add : tools\train_dual.py --fusion iaf_add --epochs 5 --lr 1e-3 --warmup 1 --name dual_iaf_add_lr1e3_e5
+2026-10-06 02:49:35  end   step8_iaf_add (exit 0)
+2026-10-06 02:49:35  start step8_iaf_af : tools\train_dual.py --fusion iaf_af --epochs 5 --lr 1e-3 --warmup 1 --name dual_iaf_af_lr1e3_e5
+2026-10-06 03:08:55  start step8_iaf_af : tools\train_dual.py --fusion iaf_af --epochs 5 --lr 1e-3 --warmup 1 --name dual_iaf_af_lr1e3_e5
+2026-10-06 04:09:44  end   step8_iaf_af (exit 0)
+2026-10-06 04:09:44  start eval_iaf : tools\eval_conditions.py --models iaf_add iaf_af
+2026-10-06 04:12:30  end   eval_iaf (exit 0)
+2026-10-06 04:12:30  start step9_opt1 : tools\owod_event_rescore.py --run runs\step7\owod_add
+2026-10-06 04:24:52  end   step9_opt1 (exit 1)
+2026-10-06 04:24:52  start step9_opt3 : tools\train_owod.py --fusion add --event-ignore 0.1 --name owod_add_evtign --only-if runs\step9_evt_unknown\owod_add_rescore.json
+2026-10-06 04:24:54  end   step9_opt3 (exit 0)
+2026-10-06 04:24:54  start step9_opt3_rescore : tools\owod_event_rescore.py --run runs\step7\owod_add_evtign
+2026-10-06 04:24:56  end   step9_opt3_rescore (exit 0)
+2026-10-06 04:24:56  queue finished
+2026-10-06 08:43:25  start step9_opt1 : tools\owod_event_rescore.py --run runs\step7\owod_add
+2026-10-06 08:54:27  end   step9_opt1 (exit 1)
+2026-10-06 08:54:27  start step9_opt3 : tools\train_owod.py --fusion add --event-ignore 0.1 --name owod_add_evtign --only-if runs\step9_evt_unknown\owod_add_rescore.json
+2026-10-06 11:24:19  end   step9_opt3 (exit 0)
+2026-10-06 11:24:19  start step9_opt3_rescore : tools\owod_event_rescore.py --run runs\step7\owod_add_evtign
+2026-10-06 11:37:17  end   step9_opt3_rescore (exit 0)
+2026-10-06 11:37:17  queue finished

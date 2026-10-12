@@ -1,0 +1,44 @@
+NOTE: event init checkpoint not found (E:\claude_Workspace\HSF_fusion\runs\step3\event_yolov8s\weights\best.pt); that stream starts from scratch
+config: {'fusion': 'af', 'epochs': 40, 'batch': 8, 'lr': 0.005, 'workers': 8, 'rgb_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\rgb_yolov8s\\weights\\best.pt', 'evt_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\event_yolov8s\\weights\\best.pt', 'name': None, 'smoke': True}
+train frames 1608, val frames 3861, params 21.2 M
+epoch 1/2  0/150  box 3.207 cls 8.836 dfl 2.163  lr 0.00000  0.2 min  mem 2.6 GB
+epoch 1/2  100/150  box 4.173 cls 6.807 dfl 2.733  lr 0.00111  0.4 min  mem 2.7 GB
+  val e1 1/242  (13 s)
+  val e1 51/242  (17 s)
+  val e1 101/242  (22 s)
+  val e1 151/242  (27 s)
+  val e1 201/242  (32 s)
+== epoch 1: mAP50 0.0034  mAP50-95 0.0004  P 0.007 R 0.001
+   per-class AP50-95: pedestrian 0.000, rider 0.000, car 0.001, bus 0.000, truck 0.000, bicycle 0.002, motorcycle 0.000
+epoch 2/2  0/150  box 3.724 cls 5.188 dfl 1.702  lr 0.00084  0.0 min  mem 3.2 GB
+epoch 2/2  100/150  box 2.884 cls 3.175 dfl 1.679  lr 0.00140  0.1 min  mem 3.2 GB
+  val e2 1/242  (1 s)
+  val e2 51/242  (6 s)
+  val e2 101/242  (11 s)
+  val e2 151/242  (16 s)
+  val e2 201/242  (21 s)
+== epoch 2: mAP50 0.0105  mAP50-95 0.0031  P 0.053 R 0.020
+   per-class AP50-95: pedestrian 0.001, rider 0.000, car 0.017, bus 0.001, truck 0.000, bicycle 0.002, motorcycle 0.000
+done. best mAP50-95 0.0031  -> E:\claude_Workspace\HSF_fusion\runs\step5_6\dual_af_smoke
+NOTE: event init checkpoint not found (E:\claude_Workspace\HSF_fusion\runs\step3\event_yolov8s\weights\best.pt); that stream starts from scratch
+config: {'fusion': 'af', 'epochs': 40, 'batch': 8, 'lr': 0.005, 'workers': 8, 'rgb_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\rgb_yolov8s\\weights\\best.pt', 'evt_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\event_yolov8s\\weights\\best.pt', 'name': None, 'smoke': True}
+train frames 1608, val frames 3861, params 21.2 M
+epoch 1/2  0/150  box 1.076 cls 0.784 dfl 0.978  lr 0.00000  0.2 min  mem 2.8 GB
+epoch 1/2  100/150  box 0.973 cls 0.805 dfl 0.921  lr 0.00111  0.4 min  mem 2.9 GB
+  val e1 1/242  (13 s)
+  val e1 51/242  (19 s)
+  val e1 101/242  (24 s)
+  val e1 151/242  (28 s)
+  val e1 201/242  (33 s)
+== epoch 1: mAP50 0.7302  mAP50-95 0.5108  P 0.797 R 0.645
+   per-class AP50-95: pedestrian 0.442, rider 0.628, car 0.690, bus 0.537, truck 0.399, bicycle 0.579, motorcycle 0.300
+epoch 2/2  0/150  box 0.972 cls 0.471 dfl 0.804  lr 0.00084  0.0 min  mem 3.4 GB
+epoch 2/2  100/150  box 0.861 cls 0.530 dfl 0.879  lr 0.00140  0.2 min  mem 3.4 GB
+  val e2 1/242  (1 s)
+  val e2 51/242  (6 s)
+  val e2 101/242  (11 s)
+  val e2 151/242  (16 s)
+  val e2 201/242  (21 s)
+== epoch 2: mAP50 0.5448  mAP50-95 0.3540  P 0.683 R 0.431
+   per-class AP50-95: pedestrian 0.370, rider 0.398, car 0.600, bus 0.438, truck 0.248, bicycle 0.399, motorcycle 0.024
+done. best mAP50-95 0.5108  -> E:\claude_Workspace\HSF_fusion\runs\step5_6\dual_af_smoke

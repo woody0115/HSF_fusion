@@ -1,0 +1,14 @@
+# HSF event-RGB fusion (Windows, CUDA 12.8: RTX 20 ~ RTX 50 series)
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+torchvision==0.22.1
+ultralytics==8.3.158      # YOLOv8 building blocks, loss and metrics (same version as E:\YOLO_Projects)
+h5py                      # DSEC events are stored in HDF5
+hdf5plugin                # DSEC events use the blosc compression filter
+numba                     # fast event accumulation (GEAR)
+opencv-python
+numpy
+pyyaml
+tqdm
+matplotlib
+pandas==2.2.3             # pandas 3.0.6's strptime DLL is blocked by Windows Smart App Control on this machine

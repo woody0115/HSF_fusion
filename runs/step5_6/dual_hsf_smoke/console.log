@@ -1,0 +1,15 @@
+config: {'fusion': 'hsf', 'epochs': 40, 'batch': 8, 'lr': 0.005, 'workers': 8, 'rgb_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\rgb_yolov8s\\weights\\best.pt', 'evt_init': 'E:\\claude_Workspace\\HSF_fusion\\runs\\step3\\event_yolov8s\\weights\\best.pt', 'name': None, 'clips': 4, 'clip_len': 4, 'smoke': True}
+train clips 407 x 4 frames, val frames 3901 (streamed), params 23.9 M
+epoch 1/2  0/101  box 0.879 cls 0.538 dfl 0.912  lr 0.00000  0.3 min  mem 3.7 GB
+epoch 1/2  100/101  box 0.921 cls 0.512 dfl 0.879  lr 0.00165  1.3 min  mem 3.8 GB
+  val e1 1/3901 frames (12 s)
+  val e1 2001/3901 frames (100 s)
+== epoch 1: mAP50 0.6988  mAP50-95 0.4753  P 0.741 R 0.629
+   per-class AP50-95: pedestrian 0.422, rider 0.616, car 0.642, bus 0.500, truck 0.355, bicycle 0.553, motorcycle 0.240
+epoch 2/2  0/101  box 0.718 cls 0.401 dfl 0.760  lr 0.00084  0.2 min  mem 3.8 GB
+epoch 2/2  100/101  box 0.888 cls 0.493 dfl 0.868  lr 0.00168  0.9 min  mem 3.8 GB
+  val e2 1/3901 frames (0 s)
+  val e2 2001/3901 frames (105 s)
+== epoch 2: mAP50 0.7136  mAP50-95 0.4840  P 0.755 R 0.635
+   per-class AP50-95: pedestrian 0.418, rider 0.614, car 0.645, bus 0.509, truck 0.396, bicycle 0.546, motorcycle 0.261
+done. best mAP50-95 0.4840  -> E:\claude_Workspace\HSF_fusion\runs\step5_6\dual_hsf_smoke
