@@ -2,6 +2,7 @@
 
 更新：2026-10-06。測試集：DSEC-Det 13 個 test 序列（13,893 張；白天 12,179／偏暗 1,000／夜間 714）。
 偵測數字為 mAP50-95（%），評估器同 Ultralytics（conf 0.001、IoU 0.7）。分光線結果來自 `runs/eval_conditions.md`。
+各版本權重：GitHub Release `models-2026-10-12`（https://github.com/woody0115/HSF_fusion/releases/tag/models-2026-10-12）。
 架構圖、各模組參數量與速度的詳細版：https://claude.ai/code/artifact/fcf8f32a-ac8b-4ec4-bc46-31cc56203e69
 
 ## 依用途挑哪個版本
