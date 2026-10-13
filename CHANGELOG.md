@@ -6,6 +6,10 @@
 
 | 日期時間 | 步驟 | 類型 | 內容 | 結果／影響 |
 |---|---|---|---|---|
+| 2026-10-13 晚 | – | 整理 | 依 10/01 會議逐字稿做規劃簡報（12 頁：資料統計、OVD／OWOD 切分、Task 切分、評估指標、目前結果與診斷、OVD 微調流程與設定、待學長確認事項、時程） | 簡報為私人連結，分享需由使用者從頁面 Share 選單開啟 |
+| 2026-10-13 晚 | 7 | 修正 | 發現 #11 是用舊的 event 輸入格式訓練（10/05 14:45 完成，早於 16:13 的修正），先前 VERSIONS 只標了 #3–#5 | VERSIONS、答案文件已補註；今天在 #11 上的 B1、B2、B4 有格式落差，建議在 #12 上重做 B1 確認 |
+| 2026-10-13 晚 | 7 | 改良 | 評估加上 Unknown AP（U-AP，`hsf/owod/metrics.py`）；`tools/reeval_owod.py` 重新評估 #11、#12 | #12 的 U-AP：T1 0.42、T2 0.15、T3 0.20（unknown 排序很差）；#12 其他指標與原始評估完全一致 |
+| 2026-10-13 晚 | – | 改良 | 依學長建議以影片切 OVD 微調資料：`tools/select_ovd_split.py` 從 42 個序列挑 12 個（13,128 張，25.7%），其餘 30 個做 OWOD；`configs/splits.yaml` 新增 `ovd_sequences`，資料集新增 `ovd`、`owod` 切分 | 每類有 24–28% 的框在 OVD 端，兩邊都有夜間序列 |
 | 2026-10-13 | 10 | 改良 | 驗證集切分：`configs/splits.yaml` 從 47 個訓練序列切出 5 個（5,413 張，含 1 個夜間序列）；`train_dual.py`／`train_owod.py` 預設 `--split val`（在驗證集挑權重，結束後在測試集評估一次，寫 `test_metrics.json`），`--split legacy` 重現 #1–#12 | 之後的實驗不再用測試集挑模型 |
 | 2026-10-13 | 10 | 改良 | 續訓：每個 epoch 存 `resume.pt`（原始權重、EMA、optimizer、scaler、進度），`--resume` 接續；OWOD 已完成的 Task 直接沿用 | 小規模測試通過（`runs/_tests/`）；重開機不必從頭重跑 |
 | 2026-10-13 | 10 | 結果 | CK 崩潰診斷（`tools/diag_ck.py`、`tools/diag_data_stats.py`，結果在 `runs/diag/`）：B1 線性探測、B2 調嵌入加訓練量、B3 框召回、B4 嵌入空間、B5／B6 資料統計、D3 閘門逐張分布 | 主因是凍結的 Neck（只放開分類頭時 pedestrian 0.7，放開 Neck 後 51.1）；pedestrian 的框回歸也壞（oracle IoU≥0.5 只有 28.9%）；加訓練量無效；閘門每張影像的標準差 0.0002 |

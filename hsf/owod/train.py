@@ -59,7 +59,7 @@ def freeze_all_but_table(model):
 
 def loader(split, batch, workers, classes=None, label_map=None, augment=False, sequences=None):
     ds = DualDSEC(split, augment=augment, classes=classes, label_map=label_map, sequences=sequences)
-    is_train = split in ('train', 'train_core')
+    is_train = split in ('train', 'train_core', 'ovd', 'owod')
     return DataLoader(ds, batch_size=batch, shuffle=is_train, drop_last=is_train,
                       num_workers=workers, pin_memory=True, collate_fn=DualDSEC.collate,
                       persistent_workers=workers > 0)

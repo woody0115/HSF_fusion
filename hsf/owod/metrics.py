@@ -8,6 +8,8 @@ Per task t with known class set K (previously known PK plus current known CK) an
                       ignored here.
   U-Recall            recall of unknown ground truth at IoU >= 0.5 by predictions labelled "unknown"
                       (top max_det per image).
+  U-AP                AP50 of the "unknown" class: unknown predictions ranked by score and matched one-to-one
+                      to unknown ground truth at IoU >= 0.5 (same VOC all-point AP as the known classes).
   WI                  Wilderness Impact = P_K / P_{K u U} - 1 at known recall 0.8: precision of known-class
                       predictions on known objects only vs. when unknown objects are also present
                       (a known prediction matching an unknown object is a false positive in P_{K u U}).
@@ -48,6 +50,7 @@ class OWODEvaluator:
         self.unk_gt, self.unk_hit = 0, 0
         self.topk = (10, 30)
         self.unk_hit_k = {k: 0 for k in self.topk}     # U-Recall@k: only the k best unknown predictions
+        self.unk_det = []                               # (score, is_tp) of every unknown prediction, for U-AP
         self.aose = 0
 
     def update(self, pred, gt):
@@ -62,6 +65,19 @@ class OWODEvaluator:
         # --- unknown recall: unknown predictions vs unknown ground truth
         self.unk_gt += len(unk_gt)
         up = pred[pred[:, 5] == self.UNK]
+        if len(up):                                     # U-AP: greedy one-to-one matching, highest score first
+            up_s = up[up[:, 4].argsort(descending=True)]
+            iou_s = box_iou(up_s[:, :4], unk_gt[:, 1:5]) if len(unk_gt) else torch.zeros((len(up_s), 0))
+            used = torch.zeros(len(unk_gt), dtype=torch.bool)
+            for j in range(len(up_s)):
+                tp = False
+                if iou_s.shape[1]:
+                    best = iou_s[j].clone()
+                    best[used] = -1
+                    k = int(best.argmax())
+                    if best[k] >= self.iou_thr:
+                        used[k], tp = True, True
+                self.unk_det.append((float(up_s[j, 4]), tp))
         if len(unk_gt) and len(up):
             iou = box_iou(unk_gt[:, 1:5], up[:, :4])
             self.unk_hit += int((iou.max(1).values >= self.iou_thr).sum())
@@ -129,6 +145,16 @@ class OWODEvaluator:
             i = np.searchsorted(rec, self.wi_recall)
             return float(prec[min(i, len(prec) - 1)])
 
+        u_ap = float('nan')
+        if self.unk_gt:
+            d = sorted(self.unk_det, key=lambda x: -x[0])
+            tp = np.array([x[1] for x in d], float)
+            if len(tp):
+                ctp, cfp = np.cumsum(tp), np.cumsum(1 - tp)
+                u_ap = 100.0 * _ap_voc(ctp / self.unk_gt, ctp / np.maximum(ctp + cfp, 1e-9))
+            else:
+                u_ap = 0.0
+
         p_k, p_ku = precision_at_recall(False), precision_at_recall(True)
         wi = p_k / p_ku - 1 if p_ku and not np.isnan(p_ku) else float('nan')
         return {
@@ -136,6 +162,7 @@ class OWODEvaluator:
             'U-Recall': 100.0 * self.unk_hit / self.unk_gt if self.unk_gt else float('nan'),
             **{f'U-Recall@{k}': 100.0 * v / self.unk_gt if self.unk_gt else float('nan')
                for k, v in self.unk_hit_k.items()},
+            'U-AP': u_ap,
             'WI': wi, 'A-OSE': self.aose,
             'AP50_per_class': {c: round(ap[c] * 100, 2) for c in self.known},
             'n_unknown_gt': self.unk_gt,

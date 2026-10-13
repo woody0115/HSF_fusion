@@ -49,7 +49,7 @@
 
 | # | 版本 | 步驟 | 設定 | 檢查點 |
 |---|---|---|---|---|
-| 11 | OWOD 原版 | 7 | T1 基礎訓練 10 epochs（COCO 初始化，只用 car），之後凍結、只調嵌入；T1 car mAP50-95 69.6 | `step7/owod_add/` |
+| 11 | OWOD 原版 | 7 | T1 基礎訓練 10 epochs（COCO 初始化，只用 car），之後凍結、只調嵌入；T1 car mAP50-95 69.6。**用舊的 event 輸入格式訓練**（10/05 14:45 完成，早於 16:13 的格式修正），用現行程式重新評估時輸入不一致，數字會不同（例：T1 car AP50 88.0 → 86.4） | `step7/owod_add/` |
 | 12 | OWOD + event 忽略（做法 3） | 9 | 同 11，T1 與 object 嵌入訓練時 event 密度前 10% 的背景 anchor 不算負樣本；T1 car 63.9 | `step7/owod_add_evtign/` |
 
 | Task | 版本 | U-Recall ↑ | U-Recall@30 | WI ↓ | A-OSE ↓ | PK | CK | Both |

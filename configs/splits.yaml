@@ -9,3 +9,19 @@ val_sequences:
   - zurich_city_04_d
   - zurich_city_05_b
   - zurich_city_09_e
+
+# OVD fine-tuning sequences (text-encoder LoRA + detector), chosen by tools/select_ovd_split.py
+# (seed 0, n 12, target 0.25). "owod" = train_core minus these.
+ovd_sequences:
+  - interlaken_00_c
+  - thun_00_a
+  - zurich_city_01_a
+  - zurich_city_01_b
+  - zurich_city_01_c
+  - zurich_city_01_e
+  - zurich_city_02_d
+  - zurich_city_08_a
+  - zurich_city_09_a
+  - zurich_city_16_a
+  - zurich_city_18_a
+  - zurich_city_19_a

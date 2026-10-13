@@ -1,0 +1,61 @@
+  owod eval 1/869 (17 s)
+  owod eval 201/869 (34 s)
+  owod eval 401/869 (54 s)
+  owod eval 601/869 (74 s)
+  owod eval 801/869 (95 s)
+owod_add T1 {'U-AP': 0.3198, 'U-Recall': 9.8457, 'U-Recall@30': 9.7786, 'WI': 0.0154, 'A-OSE': 3017, 'mAP_PK': nan, 'mAP_CK': 86.3788, 'mAP_Both': 86.3788}
+  owod eval 1/869 (14 s)
+  owod eval 201/869 (32 s)
+  owod eval 401/869 (53 s)
+  owod eval 601/869 (76 s)
+  owod eval 801/869 (99 s)
+owod_add T2 {'U-AP': 0.0475, 'U-Recall': 5.0894, 'U-Recall@30': 5.0091, 'WI': 0.0038, 'A-OSE': 1751, 'mAP_PK': 86.3775, 'mAP_CK': 17.408, 'mAP_Both': 40.3978}
+  owod eval 1/869 (14 s)
+  owod eval 201/869 (33 s)
+  owod eval 401/869 (57 s)
+  owod eval 601/869 (80 s)
+  owod eval 801/869 (102 s)
+owod_add T3 {'U-AP': 0.0139, 'U-Recall': 6.5463, 'U-Recall@30': 6.4741, 'WI': 0.0038, 'A-OSE': 1710, 'mAP_PK': 40.3006, 'mAP_CK': 0.4267, 'mAP_Both': 24.3511}
+  owod eval 1/869 (14 s)
+  owod eval 201/869 (33 s)
+  owod eval 401/869 (54 s)
+  owod eval 601/869 (77 s)
+  owod eval 801/869 (99 s)
+owod_add T4 {'U-AP': nan, 'U-Recall': nan, 'U-Recall@30': nan, 'WI': 0.0, 'A-OSE': 0, 'mAP_PK': 24.3388, 'mAP_CK': 2.3975, 'mAP_Both': 18.0699}
+  owod eval 1/869 (14 s)
+  owod eval 201/869 (33 s)
+  owod eval 401/869 (55 s)
+  owod eval 601/869 (84 s)
+  owod eval 801/869 (122 s)
+owod_add_evtign T1 {'U-AP': 0.4174, 'U-Recall': 16.4207, 'U-Recall@30': 12.8624, 'WI': 0.018, 'A-OSE': 4996, 'mAP_PK': nan, 'mAP_CK': 86.3846, 'mAP_Both': 86.3846}
+  owod eval 1/869 (25 s)
+  owod eval 201/869 (52 s)
+  owod eval 401/869 (89 s)
+  owod eval 601/869 (129 s)
+  owod eval 801/869 (166 s)
+owod_add_evtign T2 {'U-AP': 0.1464, 'U-Recall': 12.2893, 'U-Recall@30': 9.0226, 'WI': 0.0055, 'A-OSE': 2897, 'mAP_PK': 86.3612, 'mAP_CK': 16.043, 'mAP_Both': 39.4824}
+  owod eval 1/869 (20 s)
+  owod eval 201/869 (46 s)
+  owod eval 401/869 (79 s)
+  owod eval 601/869 (112 s)
+  owod eval 801/869 (141 s)
+owod_add_evtign T3 {'U-AP': 0.2023, 'U-Recall': 26.0168, 'U-Recall@30': 22.3105, 'WI': 0.0045, 'A-OSE': 1565, 'mAP_PK': 39.2359, 'mAP_CK': 0.2863, 'mAP_Both': 23.6561}
+  owod eval 1/869 (26 s)
+  owod eval 201/869 (54 s)
+  owod eval 401/869 (83 s)
+  owod eval 601/869 (113 s)
+  owod eval 801/869 (143 s)
+owod_add_evtign T4 {'U-AP': nan, 'U-Recall': nan, 'U-Recall@30': nan, 'WI': 0.0, 'A-OSE': 0, 'mAP_PK': 23.6528, 'mAP_CK': 1.0328, 'mAP_Both': 17.1899}
+# DSEC-OWOD re-evaluation with U-AP (test split, AP50, max 100 detections per image)
+
+| run | Task | U-AP ↑ | U-Recall ↑ | WI ↓ | A-OSE ↓ | PK | CK | Both |
+|---|---|---|---|---|---|---|---|---|
+| owod_add | T1 | 0.32 | 9.8 | 0.0154 | 3017 | - | 86.4 | 86.4 |
+| owod_add | T2 | 0.05 | 5.1 | 0.0038 | 1751 | 86.4 | 17.4 | 40.4 |
+| owod_add | T3 | 0.01 | 6.5 | 0.0038 | 1710 | 40.3 | 0.4 | 24.4 |
+| owod_add | T4 | - | - | 0.0000 | 0 | 24.3 | 2.4 | 18.1 |
+| owod_add_evtign | T1 | 0.42 | 16.4 | 0.0180 | 4996 | - | 86.4 | 86.4 |
+| owod_add_evtign | T2 | 0.15 | 12.3 | 0.0055 | 2897 | 86.4 | 16.0 | 39.5 |
+| owod_add_evtign | T3 | 0.20 | 26.0 | 0.0045 | 1565 | 39.2 | 0.3 | 23.7 |
+| owod_add_evtign | T4 | - | - | 0.0000 | 0 | 23.7 | 1.0 | 17.2 |
+

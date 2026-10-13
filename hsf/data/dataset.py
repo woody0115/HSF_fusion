@@ -27,6 +27,7 @@ ROOT = osp.abspath(osp.join(osp.dirname(__file__), '..', '..'))
 CFG = yaml.safe_load(open(osp.join(ROOT, 'configs', 'paths.yaml')))
 SPLITS = yaml.safe_load(open(osp.join(ROOT, 'configs', 'splits.yaml')))
 VAL_SEQUENCES = set(SPLITS['val_sequences'])
+OVD_SEQUENCES = set(SPLITS.get('ovd_sequences', []))
 RGB_FILL = (114, 114, 114)
 EVT_FILL = (114, 114, 114)        # same letterbox fill Ultralytics used when training the event model
 
@@ -34,9 +35,14 @@ EVT_FILL = (114, 114, 114)        # same letterbox fill Ultralytics used when tr
 def split_filter(split):
     """split name -> (folder under processed_root, keep set or None, drop set or None).
     'train' = all 47 training sequences (versions #1-#12), 'train_core' = train minus the validation
-    sequences of configs/splits.yaml, 'val' = those sequences, 'test' = the 13 test sequences."""
+    sequences of configs/splits.yaml, 'val' = those sequences, 'test' = the 13 test sequences,
+    'ovd' = the OVD fine-tuning sequences, 'owod' = train_core minus 'ovd' (open-world stage)."""
     if split == 'val':
         return 'train', VAL_SEQUENCES, None
+    if split == 'ovd':
+        return 'train', OVD_SEQUENCES, None
+    if split == 'owod':
+        return 'train', None, VAL_SEQUENCES | OVD_SEQUENCES
     if split == 'train_core':
         return 'train', None, VAL_SEQUENCES
     return split, None, None
