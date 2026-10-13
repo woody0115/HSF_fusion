@@ -1,0 +1,42 @@
+{"real_num_mean": 16.39, "sim_num_mean": {"0.05": 21.93, "0.06": 18.23, "0.07": 15.47, "0.08": 13.39, "0.1": 10.39}, "chosen_contrast": 0.07}
+Overriding model.yaml nc=80 with nc=8
+Overriding model.yaml nc=80 with nc=8
+  2000 labelled frames (192 s)
+  4000 labelled frames (368 s)
+  6000 labelled frames (516 s)
+  8000 labelled frames (647 s)
+  10000 labelled frames (776 s)
+  12000 labelled frames (907 s)
+af_lr1e3 {"real": {"mAP50": 74.88, "mAP50-95": 53.53}, "simulated C=0.07": {"mAP50": 73.66, "mAP50-95": 52.76}, "simulated C=0.1": {"mAP50": 73.99, "mAP50-95": 52.94}, "none": {"mAP50": 73.66, "mAP50-95": 52.54}}
+{
+ "model": "af_lr1e3",
+ "calibration": {
+  "real_num_mean": 16.39,
+  "sim_num_mean": {
+   "0.05": 21.93,
+   "0.06": 18.23,
+   "0.07": 15.47,
+   "0.08": 13.39,
+   "0.1": 10.39
+  },
+  "chosen_contrast": 0.07
+ },
+ "evaluation": {
+  "real": {
+   "mAP50": 74.88,
+   "mAP50-95": 53.53
+  },
+  "simulated C=0.07": {
+   "mAP50": 73.66,
+   "mAP50-95": 52.76
+  },
+  "simulated C=0.1": {
+   "mAP50": 73.99,
+   "mAP50-95": 52.94
+  },
+  "none": {
+   "mAP50": 73.66,
+   "mAP50-95": 52.54
+  }
+ }
+}

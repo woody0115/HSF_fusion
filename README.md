@@ -23,6 +23,17 @@
 | 9 | event 參與 unknown 判斷：做法 1 推論時依框內 event 密度重新評分（`tools/owod_event_rescore.py`）；做法 3 T1 訓練時 event 活躍的背景不當負樣本（`train_owod.py --event-ignore 0.1`） | ✅ #12（T3 U-Recall 26.0） |
 | 10 | CK 崩潰診斷（線性探測、調嵌入訓練量、框召回、嵌入空間；`tools/diag_ck.py`、`tools/diag_data_stats.py`） | 進行中，結果在 `runs/diag/` |
 
+## 螢幕影片 demo
+
+```bat
+.venv\Scripts\python.exe tools\demo_screen.py --source screen --model af
+```
+
+- **畫面來源**：啟動後用滑鼠框出影片播放的區域；`--source` 也可以給影片檔。
+- **模型**：`--model af | add | iaf_add | rgb | owod`。
+- **按鍵與滑桿**：q 結束、s 存圖、e 顯示／隱藏模擬 event、r 清空 event 記憶；滑桿是 conf、IoU、unknown。
+- **沒有 event camera**：event 從畫面模擬（`hsf/data/event_sim.py`）。在 DSEC 上，模擬 event 的 AF 模型是 52.9，真實 event 53.5，只用 RGB 53.9（`tools/event_sim_check.py`），所以這個 demo 只用來展示運作方式。
+
 ## 已確認的設計決定
 - **GEAR**：事件時窗 = 前一張影像 → 這一張影像（sync=front）；c=8、τ=10；tanh 前以灰階單位（÷255）縮放；
   h、feat 以中間灰為 0，num 以黑色為 0；h 照論文不額外衰減。

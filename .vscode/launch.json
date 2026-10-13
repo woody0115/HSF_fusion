@@ -131,5 +131,35 @@
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal"
         }
+        ,{
+            "name": "Demo: 螢幕影片（融合 AF，模擬 event）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/demo_screen.py",
+            "args": ["--source", "screen", "--model", "af"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Demo: 螢幕影片（開放世界 #12，含 unknown）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/demo_screen.py",
+            "args": ["--source", "screen", "--model", "owod"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Demo: 螢幕影片（只用 RGB，對照）",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/demo_screen.py",
+            "args": ["--source", "screen", "--model", "rgb"],
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
     ]
 }

@@ -43,6 +43,11 @@ class GEAR:
         num = np.zeros((self.h, self.w), np.int32)
         if len(x):
             _accumulate(x, y, p, feat, num)
+        return self.from_counts(feat, num)
+
+    def from_counts(self, feat, num):
+        """Same update from per-pixel counts: feat = sum of polarities (+1/-1), num = number of events.
+        Used by the event simulator (hsf/data/event_sim.py), which produces counts directly."""
         x_feat = feat.astype(np.float32) * self.scale
         x_num = num.astype(np.float32)
         f = np.exp(-x_num / self.tau)
