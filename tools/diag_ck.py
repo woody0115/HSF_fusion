@@ -209,7 +209,7 @@ def b1(a, dev):
     rows = list(range(7))
     out = {}
     for variant in a.variants:
-        model = load_task(RUN11, 'T1', 'add', dev)
+        model = load_task(osp.join(ROOT, 'runs', 'step7', a.run), 'T1', 'add', dev)
         set_active(model, rows)
         det = model.model[-1]
         for p in model.parameters():
@@ -257,12 +257,12 @@ def b1(a, dev):
                           flush=True)
                     hist.append((ep, bi, round(run, 4)))
             r = evaluate_owod(model, dev, [], rows, [], workers=a.workers)
-            evals[ep] = {'mAP_all7': round(r['mAP_CK'], 2),
+            evals[ep] = {'run': a.run, 'mAP_all7': round(r['mAP_CK'], 2),
                          'AP50_per_class': {NAMES[c]: v for c, v in r['AP50_per_class'].items()}}
             print(f'b1 {variant} epoch {ep}: {evals[ep]}', flush=True)
             set_active(model, rows)
         out[variant] = {'evals': evals, 'loss_history': hist}
-        save('b1_linear_probe', out)
+        save('b1_linear_probe' if a.run == 'owod_add' else f'b1_linear_probe_{a.run}', out)
 
 
 # ----------------------------------------------------------------------------------------------- b2
@@ -331,6 +331,8 @@ def main():
     ap.add_argument('--workers', type=int, default=8)
     ap.add_argument('--epochs', type=int, default=3, help='b1 epochs')
     ap.add_argument('--variants', nargs='*', default=['head', 'neck'], help='b1 variants')
+    ap.add_argument('--run', default='owod_add', help='b1: OWOD run under runs/step7 whose T1.pt is probed '
+                    '(owod_add = #11, trained with the old event input format; owod_add_evtign = #12)')
     ap.add_argument('--lrs', type=float, nargs='*', default=[1e-3, 1e-2], help='b2 learning rates')
     ap.add_argument('--checkpoints', type=int, nargs='*', default=[1, 5, 10], help='b2 epochs to evaluate')
     a = ap.parse_args()

@@ -31,7 +31,7 @@
 | 9 | iaf_add（光線閘門） | 8 | 同 6 + 閘門 + 15% modality dropout | 53.5 | 53.7 | 60.9 | 42.5 | `step8_iaf/dual_iaf_add_lr1e3_e5/best.pt` |
 | 10 | iaf_af（光線閘門） | 8 | 同 9 | 53.5 | 53.5 | 62.1 | 42.9 | `step8_iaf/dual_iaf_af_lr1e3_e5/best.pt` |
 
-※ 3–5 使用舊的 event 輸入格式（未做 BGR→RGB、[-1,1] 解碼），event 分支等於沒用到預訓練；6 以後是修正後格式。
+※ 3–5 使用舊的 event 輸入格式（未做 BGR→RGB、[-1,1] 解碼），event 分支等於沒用到預訓練；6 以後是修正後格式。（開放世界的 11 也是用舊格式訓練，見下方）
 所有雙流模型的兩個骨幹都從 1、2 初始化。
 
 參考值（不需訓練，`tools/eval_conditions.py` 的 `route_*`）：
@@ -63,11 +63,12 @@
 | T4 | 11 | – | – | 0 | 0 | 25.2 | 3.3 | 19.0 |
 | T4 | 12 | – | – | 0 | 0 | 23.7 | 1.0 | 17.2 |
 
-AP 為 AP50（OWOD 慣例）。版本 11 的 T1–T3 U-Recall@30 來自 `runs/step9_evt_unknown/owod_add_rescore.md` 的 α=0 列，
-WI、A-OSE 以該檔重新評估的數值為準時會與上表的原始 step 7 數值略有差異（原始評估沒有 U-Recall@k）。
+AP 為 AP50（OWOD 慣例）。版本 11 是用舊的 event 輸入格式訓練的（10/05 14:45 完成，早於格式修正），上表其他欄位取自它當時的評估。
+它的 U-Recall@30 只能用現行程式重新評估（`runs/diag/owod_reeval.md`），輸入和訓練時不同，僅供參考。
+版本 12 的數字與重新評估完全一致。Unknown AP（U-AP）見 `runs/diag/owod_reeval.md`：版本 12 的 T1／T2／T3 是 0.42／0.15／0.20。
 
 推論時 event 重新評分（做法 1，`tools/owod_event_rescore.py`）只是評估方式，不是新模型：
-- 用在版本 11：測試集上 α=1 平均 U-Recall +2.5、α=2 +6.6，但訓練集挑到 α=0.25（+0.44，未過 +0.5 門檻）。
+- 用在版本 11：測試集上 α=1 平均 U-Recall +2.5、α=2 +6.6，但訓練集挑到 α=0.25（+0.44，未過 +0.5 門檻）。注意：這次評估在格式修正之後，輸入和版本 11 訓練時不同，數字僅供參考。
 - 用在版本 12：訓練集挑到 α=0，沒有額外好處。
 結果：`runs/step9_evt_unknown/*_rescore.md`。
 

@@ -1,0 +1,6 @@
+  b1 head epoch 1 0/3530 loss 31.826 (0.6 min)
+  b1 head epoch 1 400/3530 loss 24.610 (1.5 min)
+  b1 head epoch 1 800/3530 loss 21.341 (2.4 min)
+  b1 head epoch 1 1200/3530 loss 21.457 (3.3 min)
+  b1 head epoch 1 1600/3530 loss 21.534 (4.1 min)
+  b1 head epoch 1 2000/3530 loss 21.591 (5.0 min)
