@@ -1,0 +1,11 @@
+OVD: 12 sequences, 13128 frames (25.7 % of 51073); OWOD: 30 sequences, 37945 frames; cost 0.120
+night share: OVD 11.9 %, OWOD 15.8 %
+class     OVD boxes  OWOD boxes  OVD share
+pedestrian      10395       27805    27.2 %
+rider             432        1394    23.7 %
+car             53685      150755    26.3 %
+bus              1413        3612    28.1 %
+truck            1989        6282    24.0 %
+bicycle           972        2860    25.4 %
+motorcycle        619        1957    24.0 %
+OVD sequences: ['interlaken_00_c', 'thun_00_a', 'zurich_city_01_a', 'zurich_city_01_b', 'zurich_city_01_c', 'zurich_city_01_e', 'zurich_city_02_d', 'zurich_city_08_a', 'zurich_city_09_a', 'zurich_city_16_a', 'zurich_city_18_a', 'zurich_city_19_a']

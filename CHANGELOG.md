@@ -6,6 +6,7 @@
 
 | 日期時間 | 步驟 | 類型 | 內容 | 結果／影響 |
 |---|---|---|---|---|
+| 2026-10-15 | – | 整理 | 核對另一個 agent 製作的 24 頁簡報（`HSF_OWOD_Weekly_Presentation`），寫成逐頁修正清單 `docs/presentation_fixes.md`；切分統計存成 `runs/diag/ovd_split_stats.txt`、`runs/diag/split_lighting.txt` 以便引用 | 第二版程式碼頁已改成真實程式（剩數字缺位、行號等小問題）；數字與結論頁大多未改，第 11 頁 WI 方向相反 |
 | 2026-10-14 | – | 改良 | 螢幕影片 demo `tools/demo_screen.py`（和一開始的 YOLO-UniOW demo 同樣操作：框選螢幕區域、conf／IoU／unknown 滑桿；模型 af／add／iaf_add／rgb／owod）；沒有 event camera，event 由 `hsf/data/event_sim.py` 從畫面模擬（對數亮度變化超過門檻 C），再用同一套 GEAR 編碼；啟動方式：VS Code「Demo: 螢幕影片…」或 `tools/run_demo_screen.bat` | 白天、夜間片段都能框到車；開放世界模式 unknown 分數約 0.1，預設門檻改 0.1 |
 | 2026-10-14 | – | 結果 | 模擬 event 的可用性（`tools/event_sim_check.py`，`runs/diag/event_sim_check*.json`）：AF 模型在 DSEC 測試集，真實 event 53.53、模擬 C=0.1 52.94、C=0.07（密度最接近真實）52.76、C=0.05 52.34、沒有 event 52.54；只用 RGB 的 #1 是 53.9 | 模擬 event 只比沒有 event 好 0.4，仍低於只用 RGB；demo 只能展示融合模型怎麼運作，不能展示 event 的好處。demo 預設 C=0.1 |
 | 2026-10-14 | 10 | 結果 | B1 在格式一致的 #12 上重做（`runs/diag/b1_linear_probe_owod_add_evtign.json`）；依審查修正解讀：特徵（H1）和框（H3）兩個問題都存在，H1 的乾淨證據是 bicycle | #12：只放開分類頭時 bicycle 5.5、pedestrian 0.6；Neck 一起訓練後 51.5、52.5。和 #11 一致。簡報第 8 頁與答案文件已更新 |
