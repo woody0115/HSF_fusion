@@ -6,6 +6,8 @@
 
 | 日期時間 | 步驟 | 類型 | 內容 | 結果／影響 |
 |---|---|---|---|---|
+| 2026-11-05 | 0–2 | 環境 | 搬到實驗室 Linux 伺服器（JupyterLab 容器，4× RTX A4000 16 GB）：程式放 `~/work/HSF_fusion`，資料放 `~/work/shared_data`；不從 Windows 複製處理好的資料，改在伺服器上重新下載 DSEC-Det 並重跑前處理。新增 `tools/download_dsec_det.sh`（Linux 版下載腳本，檔案清單與流程同 `.ps1`，解壓改用 `unzip`） | Windows 端的資料與結果全部保留 |
+| 2026-11-02 | – | 整理 | 新增交接文件 `docs/HANDOFF.md`：流程、檔案、論文、概念、問題、方法與下一步，供開新對話使用；同時列出過時的文件段落與 LoRA 起點的兩種說法 | 沒有改動程式與實驗結果 |
 | 2026-10-15 | – | 整理 | 核對另一個 agent 製作的 24 頁簡報（`HSF_OWOD_Weekly_Presentation`），寫成逐頁修正清單 `docs/presentation_fixes.md`；切分統計存成 `runs/diag/ovd_split_stats.txt`、`runs/diag/split_lighting.txt` 以便引用 | 第二版程式碼頁已改成真實程式（剩數字缺位、行號等小問題）；數字與結論頁大多未改，第 11 頁 WI 方向相反 |
 | 2026-10-14 | – | 改良 | 螢幕影片 demo `tools/demo_screen.py`（和一開始的 YOLO-UniOW demo 同樣操作：框選螢幕區域、conf／IoU／unknown 滑桿；模型 af／add／iaf_add／rgb／owod）；沒有 event camera，event 由 `hsf/data/event_sim.py` 從畫面模擬（對數亮度變化超過門檻 C），再用同一套 GEAR 編碼；啟動方式：VS Code「Demo: 螢幕影片…」或 `tools/run_demo_screen.bat` | 白天、夜間片段都能框到車；開放世界模式 unknown 分數約 0.1，預設門檻改 0.1 |
 | 2026-10-14 | – | 結果 | 模擬 event 的可用性（`tools/event_sim_check.py`，`runs/diag/event_sim_check*.json`）：AF 模型在 DSEC 測試集，真實 event 53.53、模擬 C=0.1 52.94、C=0.07（密度最接近真實）52.76、C=0.05 52.34、沒有 event 52.54；只用 RGB 的 #1 是 53.9 | 模擬 event 只比沒有 event 好 0.4，仍低於只用 RGB；demo 只能展示融合模型怎麼運作，不能展示 event 的好處。demo 預設 C=0.1 |
